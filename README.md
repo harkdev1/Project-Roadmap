@@ -4,6 +4,15 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 ## Gallery
 
+
+<!-- autodoc:project:project:start -->
+### [Project](projects/project/README.md)
+
+**In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
+
+Created the Networking & Infrastructure Engineering project workspace, initialized AutoDoc, installed GitHub CLI and authenticated with GitHub, created the public networking-infrastructure-engineering repository, configured the origin remote and main branch, pushed the initial AutoDoc project structure, enabled automatic synchronization, generated the first engineering log and committed the initial documentation...
+<!-- autodoc:project:project:end -->
+
 <!-- autodoc:project:cyberops-sandbox:start -->
 ### [CyberOps Sandbox](projects/cyberops-sandbox/README.md)
 
