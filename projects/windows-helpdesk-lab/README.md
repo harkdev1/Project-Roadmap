@@ -7,3 +7,5 @@ A small-business-style Windows domain lab using the Northstar environment. The c
 The Northstar Workstation Policy is configured and linked, but its application to a domain-joined workstation is unverified. Account access, DNS/connectivity, and policy-behavior ticket exercises remain proposed future work, not completed incidents.
 
 ## Showcase
+
+AutoDoc adds approved images referenced by the project's logs and session highlights here after a successful `autodoc finish` or `autodoc project complete` sync.

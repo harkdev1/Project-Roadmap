@@ -11,7 +11,7 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 Build a Windows security homelab through controlled experiments. Recent work exposed a process-telemetry visibility gap instead of claiming a detection that the configured audit policy did not prove.
 
-![Telemetry Visibility Gap](projects/cyberops-sandbox/screenshots/2026-10-08_053048_telemetry-visibility-gap.png)
+**[Open the CyberOps gallery](projects/cyberops-sandbox/README.md)**. AutoDoc will add copied screenshots and session highlights after the next successful finish or project-completion sync.
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->
@@ -21,7 +21,7 @@ Build a Windows security homelab through controlled experiments. Recent work exp
 
 The Northstar Windows domain lab documents its AD/DNS foundation, administration checks, reusable PowerShell diagnostics, and configured workstation policy. Client-side policy application remains unverified.
 
-![Northstar Workstation Policy Configured](projects/windows-helpdesk-lab/screenshots/2026-10-10_094549_northstar-workstation-policy-configured.png)
+**[Open the Helpdesk gallery](projects/windows-helpdesk-lab/README.md)**. AutoDoc will add approved screenshots and session highlights after the next successful finish or project-completion sync.
 <!-- autodoc:project:windows-helpdesk-lab:end -->
 
 ## How the gallery updates

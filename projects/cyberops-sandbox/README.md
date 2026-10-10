@@ -7,3 +7,5 @@ A hands-on Windows security homelab built through controlled experiments. The cu
 The latest recorded test found that the configured Security log did not reliably expose the process/file activity under investigation. That visibility gap is a finding, not a completed detection capability. The next step is to review audit policy configuration and repeat the controlled tests.
 
 ## Showcase
+
+AutoDoc adds images referenced by the project's logs and session highlights here after a successful `autodoc finish` or `autodoc project complete` sync.
