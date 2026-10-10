@@ -1,0 +1,31 @@
+# Secrets and credential material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.kdbx
+*password*
+*credential*
+*_secrets.*
+
+# Local state and development environments
+**/.autodoc/
+**/.autodoc-public/
+**/.venv/
+**/venv/
+**/__pycache__/
+*.py[cod]
+
+# Editor and operating-system noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Backups and temporary exports
+*.bak
+*.tmp
