@@ -1,5 +1,7 @@
 # Roadmap
 
+Starting from the fundamentals, building progressively, and following curiosity wherever it leads. A living record of projects, experiments, lessons learned, and the journey from beginner to builder.
+
 A standalone, Git-backed home for portfolio planning and the evidence-based history of projects. Roadmap is independent of AutoDoc and does not replace, reorganize, or combine source project repositories.
 
 ## Project index
