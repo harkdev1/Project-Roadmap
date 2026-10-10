@@ -1,6 +1,6 @@
-# Limitations and Prioritized Next Steps
+# Post-v1 Limitations and Optional Next Steps
 
-## Current limitations and open questions
+## Known limitations at v1.0 completion
 
 - **GPO effect is unverified:** The Northstar Workstation Policy is configured and linked to Northstar Computers, but no domain-joined workstation result is recorded.
 - **No end-to-end ticket set yet:** The account-access, DNS/connectivity, and GPO-behavior tickets are proposed future exercises, not completed incidents.
@@ -9,9 +9,9 @@
 - **Privacy before portfolio publication:** Some source screenshots expose VM addresses, diagnostic output, or test-user display names. Do not publish them unredacted.
 - **Diagnostic scope:** `Get-HelpdeskSystemInfo.ps1` collects basic state and recent System events; it does not establish root cause or perform remediation.
 
-## Prioritized next steps
+## Optional post-v1 priorities
 
-1. **Verify GPO application on a domain-joined workstation.** Confirm domain join and OU placement, run `gpresult` or Resultant Set of Policy, verify the expected setting, and capture sanitized evidence. If it fails, record the actual cause; do not mark the policy applied based only on its GPMC link.
+1. **Verify GPO application on a domain-joined workstation.** This is the highest-value optional follow-up, not a blocker to the owner-declared v1.0 completion. Confirm domain join and OU placement, run `gpresult` or Resultant Set of Policy, verify the expected setting, and capture sanitized evidence. If it fails, record the actual cause; do not mark the policy applied based only on its GPMC link.
 2. **Complete one controlled account-access ticket.** Use a test account and a defined resource. Record symptom, safe checks, group/account state, authorized change, and successful access verification. Never store passwords.
 3. **Complete one controlled DNS/connectivity ticket.** Reproduce a bounded failure, inspect client configuration and DNS resolution, run server-side checks, isolate the cause, and verify recovery.
 4. **Complete one controlled Group Policy ticket.** Use the verified workstation, investigate a reproducible policy symptom, inspect scope/filtering and resultant policy, apply a scoped fix if needed, and verify the user-visible effect.

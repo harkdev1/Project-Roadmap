@@ -1,13 +1,13 @@
 # Windows Helpdesk Lab Roadmap
 
-**Current status:** In progress. The domain and administration foundation is documented; end-user ticket outcomes remain unproven.
+**Current status:** Complete (v1.0; owner-confirmed). The delivered lab foundation and recorded administration checks are complete; workstation-level GPO verification and end-user ticket exercises remain optional extensions.
 
 ## Phase map
 
 ```mermaid
 flowchart LR
     A[Completed: domain and AD foundation] --> B[Completed: DNS and admin diagnostics]
-    B --> C[In progress: verify workstation GPO application]
+    B --> C[Deferred post-v1: verify workstation GPO application]
     C --> D[Proposed: account-access ticket]
     C --> E[Proposed: DNS and connectivity ticket]
     C --> F[Proposed: Group Policy behavior ticket]
@@ -32,7 +32,7 @@ flowchart LR
 
 **Acceptance:** The October 10 log records successful execution and checks; the final DNS screenshot visibly reports the recorded `dcdiag /test:DNS` results passing. The script is a reporting aid, not an automated remediation tool.
 
-### 3. Verify workstation policy application: in progress / deferred
+### 3. Verify workstation policy application: deferred post-v1
 
 **Deliverables:** A domain-joined workstation in the intended OU, a verified policy refresh/result, and sanitized evidence of the effective setting.
 
@@ -71,15 +71,15 @@ The GPO itself exists, is enabled, and is linked to Northstar Computers. Worksta
 
 **Acceptance criteria:** Check OU placement, GPO link and enabled state, security filtering, policy refresh, and resultant policy; document whether the setting applied; verify the user-visible or system-level effect; capture sanitized evidence. Do not label configuration as effective before client verification.
 
-### 7. Portfolio review: proposed
+### 7. Portfolio review: optional post-v1
 
 **Deliverables:** Three reviewed ticket write-ups, a concise architecture explanation, sanitized screenshots, clear limitations, and repeatable setup/validation notes.
 
 **Acceptance:** A reviewer can follow the symptom, investigation, evidence, decision, change, and verification for each scenario without relying on unsupported claims or private data.
 
-## Priority order
+## Optional post-v1 priority order
 
-1. Verify GPO application on a joined workstation; this closes the most important currently documented verification gap.
+1. Verify GPO application on a joined workstation; this closes the most important documented verification gap but is not a blocker to the owner-declared v1.0 completion.
 2. Complete one controlled account-access ticket end to end.
 3. Complete one controlled DNS/connectivity ticket end to end.
 4. Complete one controlled Group Policy behavior ticket end to end.

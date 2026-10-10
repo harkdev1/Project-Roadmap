@@ -1,5 +1,7 @@
 # Windows Helpdesk Lab Technical Summary
 
+**Project disposition:** Complete (v1.0; owner-confirmed). The limitations below remain explicitly documented as optional post-v1 work.
+
 ## Verified lab context
 
 - **Lab identity:** Northstar Solutions; domain `northstar.local`.

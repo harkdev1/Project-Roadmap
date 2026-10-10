@@ -6,7 +6,7 @@ A standalone, Git-backed home for portfolio planning and the evidence-based hist
 
 | Project | Status | Roadmap | Major accomplishments | Next milestone |
 |---|---|---|---|---|
-| Windows Helpdesk Lab | In progress | [Roadmap](projects/windows-helpdesk-lab/roadmap.md) | Windows Server domain foundation, Active Directory structure, DNS validation, reusable PowerShell diagnostics, and a configured but not workstation-verified GPO | Verify the Northstar Workstation Policy on a domain-joined workstation |
+| Windows Helpdesk Lab | Complete (v1.0; owner-confirmed) | [Roadmap](projects/windows-helpdesk-lab/roadmap.md) | Northstar domain foundation, Active Directory structure, DNS and service checks, reusable PowerShell diagnostics, configured and linked GPO | Optional post-v1: verify GPO application on a domain-joined workstation |
 
 This initial Roadmap repository documents only Windows-Helpdesk-Lab. Other project workstreams are intentionally not indexed in this initial version.
 
