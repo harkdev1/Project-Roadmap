@@ -18,9 +18,9 @@ Created the Networking & Infrastructure Engineering project workspace, initializ
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Build a Windows security homelab through controlled experiments. Recent work exposed a process-telemetry visibility gap instead of claiming a detection that the configured audit policy did not prove.
+Verified NS-DC01 configuration, confirmed Windows Server 2025 with AD DS and DNS, documented the northstar.local domain and network settings, confirmed VMware NAT mode, identified reusable Project 1 administration and PowerShell capabilities, reviewed Project 2 scope. Summary: Current efforts focused on establishing a verified baseline configuration for NS-DC01, documenting its existing state, and identifying...
 
-**[Open the CyberOps gallery](projects/cyberops-sandbox/README.md)**. AutoDoc will add copied screenshots and session highlights after the next successful finish or project-completion sync.
+[![Telemetry Visibility Gap](projects/cyberops-sandbox/screenshots/2026-10-08_053048_telemetry-visibility-gap.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->
