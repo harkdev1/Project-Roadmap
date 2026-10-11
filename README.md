@@ -5,6 +5,17 @@ Starting from the fundamentals, building progressively, and following curiosity 
 ## Gallery
 
 
+
+<!-- autodoc:project:networking-infrastructure-engineering:start -->
+### [Networking & Infrastructure Engineering](projects/networking-infrastructure-engineering/README.md)
+
+**In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
+
+Installed OPNsense 26.7 on a 20 GB virtual disk, configured the VM with 4 GB RAM and 2 CPU cores, established WAN/LAN interface assignments (em1 WAN and em0 LAN), created an isolated VMware Host-only network on VMnet2 using 192.168.20.0/24, configured the OPNsense LAN gateway as 192.168.20.1/24, enabled LAN DHCP with a pool of 192.168.20.100–192.168.20.199, verified VMnet8 NAT configuration using subnet...
+
+[![OPNsense Live Boot](projects/networking-infrastructure-engineering/screenshots/2026-10-11_131714_opnsense-live-boot.png)](projects/networking-infrastructure-engineering/README.md)
+<!-- autodoc:project:networking-infrastructure-engineering:end -->
+
 <!-- autodoc:project:project:start -->
 ### [Project](projects/project/README.md)
 
