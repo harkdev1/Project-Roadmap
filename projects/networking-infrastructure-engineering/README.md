@@ -7,29 +7,49 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Installed OPNsense 26.7 on a 20 GB virtual disk, configured the VM with 4 GB RAM and 2 CPU cores, established WAN/LAN interface assignments (em1 WAN and em0 LAN), created an isolated VMware Host-only network on VMnet2 using 192.168.20.0/24, configured the OPNsense LAN gateway as 192.168.20.1/24, enabled LAN DHCP with a pool of 192.168.20.100–192.168.20.199, verified VMnet8 NAT configuration using subnet 192.168.148.0/24 and gateway 192.168.148.2, inspected the VMware DHCP pool 192.168.148.128–192.168.148.254, confirmed the VMware DHCP service was running, inspected interface status and routing tables, captured WAN DHCP traffic using tcpdump, observed repeated IPv4 DHCP Discover requests without a visible DHCP Offer, documented the unresolved WAN addressing issue.
+Investigated OPNsense WAN DHCP failure, verified WAN interface em1 and repeated DHCP Discover transmissions, confirmed VMware VMnet8 NAT and DHCP configuration, checked VMware DHCP and NAT service status, restarted VMware DHCP without restoring the lease, examined Windows DHCP event channels and VMware lease records, started a PCAP capture for future Wireshark analysis
 
 Summary:
-Installed and configured OPNsense 26.7 as the foundation for an isolated enterprise-style virtual network, established the LAN gateway at 192.168.20.1/24 and configured the DHCP pool for future lab clients, assigned WAN and LAN interfaces and verified VMware NAT addressing, investigated missing WAN IPv4 connectivity through interface inspection, routing-table analysis, DHCP lease inspection, and packet capture, identified repeated DHCP Discover requests without a visible DHCP Offer, documented the unresolved WAN DHCP issue and established a targeted troubleshooting plan for the next session.
+This documentation outlines the initial phase of troubleshooting a persistent WAN DHCP failure experienced by an OPNsense virtual machine within a VMware environment. Despite a systematic approach to verifying both the OPNsense client's behavior and the VMware virtual network configuration, the issue remains unresolved. Limited visibility into the DHCP negotiation process has hindered fault isolation. Recognizing diminishing returns from further configuration checks, the focus is now shifting to evidence-based, packet-level analysis to pinpoint the root cause.
 
 Tasks Completed:
-Installed OPNsense 26.7 on a dedicated virtual machine, configured WAN and LAN interface assignments, created the isolated VMnet2 network using 192.168.20.0/24, assigned the LAN gateway 192.168.20.1/24, configured the LAN DHCP pool from 192.168.20.100 to 192.168.20.199, verified VMware VMnet8 NAT subnet and gateway settings, inspected VMware DHCP pool configuration and service status, inspected OPNsense interface status and routing tables, examined DHCP lease state, captured WAN IPv4 DHCP traffic with tcpdump, identified repeated DHCP Discover requests without a visible DHCP Offer, documented the unresolved WAN connectivity issue and next troubleshooting steps.
+*   Investigated the OPNsense WAN DHCP failure.
+*   Verified the OPNsense WAN interface (em1) configuration and confirmed repeated DHCP Discover transmissions.
+*   Confirmed the VMware VMnet8 NAT and DHCP configuration.
+*   Checked the operational status of the VMware DHCP and NAT services.
+*   Restarted the VMware DHCP service without restoring existing leases.
+*   Examined Windows DHCP event channels on the host.
+*   Reviewed VMware DHCP lease records for any relevant entries.
+*   Initiated a PCAP capture for subsequent Wireshark analysis.
 
 Issues Encountered:
-WAN failed to obtain an IPv4 address through DHCP despite the virtual interface reporting an active link, repeated DHCP Discover requests were captured without a visible DHCP Offer, the WAN DHCP lease file was empty, the default IPv4 route was absent, the LAN virtual adapter was initially attached to VMnet0 instead of the intended VMnet2 and required correction, initial troubleshooting was slowed by incomplete inventory of the existing virtual network configuration, DHCPv6 log messages initially complicated interpretation of the IPv4 DHCP issue, Gemini AI generation encountered a temporary 503 service availability error and required manual documentation.
+*   Repeated configuration checks did not succeed in isolating the fault.
+*   Limited visibility into whether the VMware DHCP server was receiving OPNsense DHCP broadcast messages.
+*   Initial host-side packet captures proved inconclusive in diagnosing the problem.
+*   The WAN DHCP failure for OPNsense persists.
+*   A tendency to repeat verification steps without establishing new observation points or distinguishing clearly between confirmed findings and assumptions.
 
 Next Steps:
-Inventory and validate the existing VMware virtual network configuration before making further changes, investigate why OPNsense WAN (`em1`) sends IPv4 DHCP Discover requests without receiving a visible DHCP Offer, verify VMware NAT and DHCP service behavior, obtain a valid WAN IPv4 lease and confirm the default route, test upstream connectivity, verify OPNsense LAN gateway and DHCP functionality on VMnet2, connect a test client to the isolated lab subnet, validate permitted and blocked traffic through the firewall, capture screenshots and packet evidence at key milestones, document troubleshooting findings and configuration decisions, finalize the network topology diagram and session documentation.
+*   Perform a detailed Wireshark analysis of the captured PCAP file to thoroughly examine DHCP negotiation packets and identify communication breakdowns.
+*   Establish a more granular and effective observation point, potentially capturing traffic directly on the VMnet8 interface within the host, or within the guest VM itself (if feasible), to ensure visibility of DHCP Discover requests reaching the VMware DHCP server and its subsequent responses.
+*   Based on the packet-level analysis, systematically isolate the fault to either the OPNsense client, the VMware virtual network's routing/bridging, or the VMware DHCP service itself.
 
 Notes:
-OPNsense installation and LAN configuration are complete, WAN is assigned to em1 and connected to VMware NAT, LAN is assigned to em0 on VMnet2, WAN currently has no IPv4 address, the DHCP lease file is empty, IPv4 DHCP Discover requests were captured on em1 without a visible Offer, the cause remains unresolved, do not mark WAN routing or firewall functionality as validated.
 
 ## Evidence gallery
 ### OPNsense Live Boot
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
+### VMware DHCP Investigation
+![VMware DHCP Investigation](screenshots/2026-10-12_043617_vmware-dhcp-investigation.png)
+Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-12.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-10-12 · 04:27 to 05:39
+Recorded outcome: ❌ No. This documentation outlines the initial phase of troubleshooting a persistent WAN DHCP failure experienced by an OPNsense virtual machine within a VMware environment. Despite a systematic approach to verifying both the OPNsense client's behavior and the VMware virtual network configuration, the issue remains unresolved. Limited visibility into the DHCP negotiation process has hindered fault isolation. Recognizing diminishing returns from further configuration checks, the focus is now shifting to evidence-based, packet-level analysis to pinpoint the root cause.
+[Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-12.md)
 
 ### 2026-10-11 · 11:44 to 15:04
 Recorded outcome: ❌ No. Installed and configured OPNsense 26.7 as the foundation for an isolated enterprise-style virtual network, established the LAN gateway at 192.168.20.1/24 and configured the DHCP pool for future lab clients, assigned WAN and LAN interfaces and verified VMware NAT addressing, investigated missing WAN IPv4 connectivity through interface inspection, routing-table analysis, DHCP lease inspection, and packet capture, identified repeated DHCP Discover requests without a visible DHCP Offer, documented the unresolved WAN DHCP issue and established a targeted troubleshooting plan for the next session.
