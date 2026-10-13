@@ -11,9 +11,9 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Investigated OPNsense WAN DHCP failure, verified WAN interface em1 and repeated DHCP Discover transmissions, confirmed VMware VMnet8 NAT and DHCP configuration, checked VMware DHCP and NAT service status, restarted VMware DHCP without restoring the lease, examined Windows DHCP event channels and VMware lease records, started a PCAP capture for future Wireshark analysis Summary: This documentation outlines the...
+Audited VMware virtual network adapter assignments, identified the incorrect OPNsense WAN/LAN interface mapping, reassigned WAN to em0 on VMnet8 and LAN to em1 on VMnet2, obtained WAN DHCP lease 192.168.148.129/24, verified default gateway 192.168.148.2, confirmed gateway reachability with 4/4 replies and 0% packet loss, confirmed external IP connectivity to 1.1.1.1 with 4/4 replies and 0% packet loss, validated...
 
-[![OPNsense Live Boot](projects/networking-infrastructure-engineering/screenshots/2026-10-11_131714_opnsense-live-boot.png)](projects/networking-infrastructure-engineering/README.md)
+[![VMware DHCP Investigation](projects/networking-infrastructure-engineering/screenshots/2026-10-12_043617_vmware-dhcp-investigation.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
 
 <!-- autodoc:project:project:start -->
