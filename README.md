@@ -11,9 +11,9 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Audited VMware virtual network adapter assignments, identified the incorrect OPNsense WAN/LAN interface mapping, reassigned WAN to em0 on VMnet8 and LAN to em1 on VMnet2, obtained WAN DHCP lease 192.168.148.129/24, verified default gateway 192.168.148.2, confirmed gateway reachability with 4/4 replies and 0% packet loss, confirmed external IP connectivity to 1.1.1.1 with 4/4 replies and 0% packet loss, validated...
+Verified OPNsense 26.7 interface assignments, confirmed WAN em0 at 192.168.148.129/24 and LAN em1 at 192.168.20.1/24, reviewed VMware VMnet2 host-only network configuration, identified and resolved an IP address conflict between the OPNsense LAN interface and the Windows host's VMnet2 adapter, changed the host adapter address from 192.168.20.1 to 192.168.20.2, verified OPNsense routing table and HTTPS listener,...
 
-[![VMware DHCP Investigation](projects/networking-infrastructure-engineering/screenshots/2026-10-12_043617_vmware-dhcp-investigation.png)](projects/networking-infrastructure-engineering/README.md)
+[![WAN DHCP Success](projects/networking-infrastructure-engineering/screenshots/2026-10-13_142955_wan-dhcp-success.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
 
 <!-- autodoc:project:project:start -->

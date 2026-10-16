@@ -7,45 +7,40 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Audited VMware virtual network adapter assignments, identified the incorrect OPNsense WAN/LAN interface mapping, reassigned WAN to em0 on VMnet8 and LAN to em1 on VMnet2, obtained WAN DHCP lease 192.168.148.129/24, verified default gateway 192.168.148.2, confirmed gateway reachability with 4/4 replies and 0% packet loss, confirmed external IP connectivity to 1.1.1.1 with 4/4 replies and 0% packet loss, validated DNS resolution for example.com through the local resolver, documented the current network topology and addressing plan.
+Verified OPNsense 26.7 interface assignments, confirmed WAN em0 at 192.168.148.129/24 and LAN em1 at 192.168.20.1/24, reviewed VMware VMnet2 host-only network configuration, identified and resolved an IP address conflict between the OPNsense LAN interface and the Windows host's VMnet2 adapter, changed the host adapter address from 192.168.20.1 to 192.168.20.2, verified OPNsense routing table and HTTPS listener, confirmed LAN interface status is active, successfully tested TCP connectivity from the physical Windows host to 192.168.20.1 on port 443.
 
 Summary:
-This session successfully addressed and resolved critical network connectivity issues for an OPNsense virtual appliance. The primary cause was identified as an incorrect mapping of VMware virtual network adapters to OPNsense WAN/LAN interfaces. After systematically correcting these assignments, full network functionality was restored. WAN DHCP was successfully obtained, routing verified, and external IP connectivity confirmed. DNS resolution was also validated. The session concluded with a documented network topology, establishing a stable and reproducible foundation for subsequent implementation phases.
+Systematic network troubleshooting was performed on a virtualized OPNsense 26.7 firewall environment to resolve critical management connectivity issues. The primary problem identified was an IP address conflict between the OPNsense LAN interface (192.168.20.1/24) and the VMware VMnet2 host-only adapter on the Windows host. This conflict was successfully resolved by reconfiguring the host's VMnet2 adapter to 192.168.20.2/24. Post-resolution, OPNsense interface assignments, routing, and HTTPS listener functionality were verified, and successful TCP connectivity to the firewall's web interface on port 443 was established from the physical Windows host. This work preserved the existing domain controller configuration and restored essential HTTPS reachability to the firewall.
 
 Tasks Completed:
-*   Audited VMware virtual network adapter assignments for the OPNsense VM.
-*   Identified and corrected the incorrect OPNsense WAN/LAN interface mapping:
-    *   Reassigned the WAN interface to `em0` on `VMnet8`.
-    *   Reassigned the LAN interface to `em1` on `VMnet2`.
-*   Successfully obtained a WAN DHCP lease: `192.168.148.129/24`.
-*   Verified the default gateway: `192.168.148.2`.
-*   Confirmed gateway reachability with 4/4 replies and 0% packet loss.
-*   Confirmed external IP connectivity to `1.1.1.1` with 4/4 replies and 0% packet loss.
-*   Validated DNS resolution for `example.com` through the local resolver.
-*   Documented the current network topology and addressing plan.
+*   **OPNsense Interface Verification:** Confirmed OPNsense 26.7 interface assignments:
+    *   WAN: `em0` at `192.168.148.129/24`
+    *   LAN: `em1` at `192.168.20.1/24`
+*   **VMware Network Configuration Review:** Reviewed the VMware `VMnet2` host-only network configuration on the Windows host.
+*   **IP Address Conflict Resolution:**
+    *   Identified an IP address conflict between the OPNsense LAN interface (`192.168.20.1`) and the Windows host's `VMnet2` adapter.
+    *   Resolved the conflict by changing the Windows host's `VMnet2` adapter IP address from `192.168.20.1` to `192.168.20.2`.
+*   **OPNsense System Verification:**
+    *   Verified OPNsense routing table.
+    *   Confirmed OPNsense HTTPS listener is active on the LAN interface.
+    *   Confirmed LAN interface status is active.
+*   **Connectivity Testing:** Successfully tested TCP connectivity from the physical Windows host to the OPNsense LAN interface (`192.168.20.1`) on port `443` (HTTPS).
 
 Issues Encountered:
-*   Initial troubleshooting efforts prematurely focused on DHCP behavior before a complete validation of the network topology, including correlating VMware adapter MAC addresses with OPNsense interface names.
-*   Incorrect assumptions were made regarding VMware virtual network adapter ordering and the corresponding OPNsense `emX` interface names.
-*   The troubleshooting session extended without predefined time boundaries or clear stopping criteria, leading to prolonged diagnostic attempts and increased fatigue.
-*   The troubleshooting sequence was inefficient due to a failure to prioritize a systematic topology audit upfront.
+*   **IP Address Conflict:** A critical IP address conflict existed where the Windows host's `VMnet2` adapter shared the same IP address (`192.168.20.1`) as the OPNsense LAN interface, preventing proper network communication.
+*   **HTTPS Access Timeouts:** Initial attempts to access the OPNsense web interface via HTTPS timed out directly as a symptom of the underlying IP address conflict.
+*   **Troubleshooting Complexity:** Distinguishing between host network configuration issues and firewall configuration issues required focused troubleshooting efforts.
 
 Next Steps:
-*   Proceed with the next phase of OPNsense configuration and network implementation, building upon the established and verified network foundation.
-*   Implement stricter time boundaries and earlier stopping criteria for future troubleshooting sessions to improve efficiency.
+*   Validate DHCP functionality on the OPNsense LAN interface.
 
 Notes:
-This session highlighted the critical importance of a systematic infrastructure troubleshooting methodology, particularly the absolute necessity of validating the complete network topology and interface mappings *before* diving into service-specific issues like DHCP. The key to resolution was identifying and correcting the virtual interface mapping error. Establishing a reproducible topology reference and meticulously documenting the current state are essential for future work and maintaining a stable environment. Lessons learned include prioritizing a comprehensive topology audit, correlating MAC addresses, and implementing better session management practices (e.g., time boxing, defined stopping points) to prevent extended, less effective diagnostic efforts.
+*   No AI-related errors or misses were identified during this process.
+*   The troubleshooting process emphasized systematic verification of virtual network components and firewall configurations.
+*   The environment involved OPNsense 26.7, a VMware virtual machine, and a physical Windows host.
+*   Preservation of existing domain controller configuration was a key consideration; no changes to the DC were performed or required.
 
 ## Evidence gallery
-### VMware DHCP Investigation
-![VMware DHCP Investigation](screenshots/2026-10-12_043617_vmware-dhcp-investigation.png)
-Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-12.md) and verified against the source image.
-
-### OPNsense Live Boot
-![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
-Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
-
 ### WAN DHCP Success
 ![WAN DHCP Success](screenshots/2026-10-13_142955_wan-dhcp-success.png)
 Evidence copied from [logs/2026-10-13.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-13.md) and verified against the source image.
@@ -66,7 +61,19 @@ Evidence copied from [logs/2026-10-13.md](https://github.com/harkdev1/networking
 ![WAN DNS Resolution](screenshots/2026-10-13_144046_wan-dns-resolution.png)
 Evidence copied from [logs/2026-10-13.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-13.md) and verified against the source image.
 
+### VMware DHCP Investigation
+![VMware DHCP Investigation](screenshots/2026-10-12_043617_vmware-dhcp-investigation.png)
+Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-12.md) and verified against the source image.
+
+### OPNsense Live Boot
+![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
+Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-10-16 · 05:24 to 05:51
+Recorded outcome: ❌ No. Systematic network troubleshooting was performed on a virtualized OPNsense 26.7 firewall environment to resolve critical management connectivity issues. The primary problem identified was an IP address conflict between the OPNsense LAN interface (192.168.20.1/24) and the VMware VMnet2 host-only adapter on the Windows host. This conflict was successfully resolved by reconfiguring the host's VMnet2 adapter to 192.168.20.2/24. Post-resolution, OPNsense interface assignments, routing, and HTTPS listener functionality were verified, and successful TCP connectivity to the firewall's web interface on port 443 was established from the physical Windows host. This work...
+[Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-16.md)
 
 ### 2026-10-13 · 14:00 to 14:42
 Recorded outcome: ✅ Yes. This session successfully addressed and resolved critical network connectivity issues for an OPNsense virtual appliance. The primary cause was identified as an incorrect mapping of VMware virtual network adapters to OPNsense WAN/LAN interfaces. After systematically correcting these assignments, full network functionality was restored. WAN DHCP was successfully obtained, routing verified, and external IP connectivity confirmed. DNS resolution was also validated. The session concluded with a documented network topology, establishing a stable and reproducible foundation for subsequent implementation phases.
