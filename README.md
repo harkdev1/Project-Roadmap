@@ -11,9 +11,9 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Accessed the OPNsense 26.7 web interface through the host-only LAN network, verified the LAN interface at 192.168.20.1/24 and host adapter at 192.168.20.2/24, inspected Kea DHCPv4 settings and confirmed the service was initially disabled with no interface selected, inspected the subnet configuration and found zero existing subnet entries, created a LAN subnet entry for 192.168.20.0/24 with the address pool...
+Created WIN11-CLIENT01 in VMware Workstation, configured 4 GB RAM and 2 vCPUs, allocated a 64 GB virtual disk, connected the client to VMnet2 Host-only, installed Windows 11, assigned the hostname WIN11-CLIENT01, preserved the existing Windows Server domain controller and OPNsense network configuration. Summary: A new Windows 11 client endpoint, `WIN11-CLIENT01`, has been successfully deployed and configured...
 
-[![WAN DHCP Success](projects/networking-infrastructure-engineering/screenshots/2026-10-13_142955_wan-dhcp-success.png)](projects/networking-infrastructure-engineering/README.md)
+[![OPNSense LAN DHCP Subnet](projects/networking-infrastructure-engineering/screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
 
 <!-- autodoc:project:project:start -->

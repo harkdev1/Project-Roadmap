@@ -7,33 +7,39 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Accessed the OPNsense 26.7 web interface through the host-only LAN network, verified the LAN interface at 192.168.20.1/24 and host adapter at 192.168.20.2/24, inspected Kea DHCPv4 settings and confirmed the service was initially disabled with no interface selected, inspected the subnet configuration and found zero existing subnet entries, created a LAN subnet entry for 192.168.20.0/24 with the address pool 192.168.20.100–192.168.20.199, selected LAN as the Kea DHCPv4 service interface, checked the service Enabled option.
+Created WIN11-CLIENT01 in VMware Workstation, configured 4 GB RAM and 2 vCPUs, allocated a 64 GB virtual disk, connected the client to VMnet2 Host-only, installed Windows 11, assigned the hostname WIN11-CLIENT01, preserved the existing Windows Server domain controller and OPNsense network configuration.
 
 Summary:
-Initial configuration of the Kea DHCPv4 service on OPNsense 26.7 was performed, including verification of network interfaces and creation of a DHCP subnet with an address pool for the LAN network.
+A new Windows 11 client endpoint, `WIN11-CLIENT01`, has been successfully deployed and configured within the lab environment. This expansion provides a dedicated client for comprehensive network and security testing, establishing the foundation for validating DHCP address assignment, gateway connectivity, and preparing for future firewall policy validation and packet analysis. The existing Windows Server domain controller and OPNsense network configuration were preserved without modification.
 
 Tasks Completed:
-1.  Accessed the OPNsense 26.7 web interface through the host-only LAN network.
-2.  Verified the LAN interface (192.168.20.1/24) and host adapter (192.168.20.2/24) network configurations.
-3.  Inspected Kea DHCPv4 settings, confirming the service was initially disabled with no interface selected.
-4.  Inspected subnet configuration, finding zero existing subnet entries.
-5.  Created a LAN subnet entry for 192.168.20.0/24 with the address pool 192.168.20.100–192.168.20.199.
-6.  Selected the LAN interface for the Kea DHCPv4 service.
-7.  Checked the service 'Enabled' option for Kea DHCPv4.
+*   Created a new virtual machine named `WIN11-CLIENT01` in VMware Workstation.
+*   Configured virtual hardware for `WIN11-CLIENT01`:
+    *   RAM: 4 GB
+    *   vCPUs: 2
+    *   Virtual Disk: 64 GB
+*   Connected the `WIN11-CLIENT01` virtual machine to the `VMnet2` (Host-only) network.
+*   Installed the Windows 11 operating system on `WIN11-CLIENT01`.
+*   Assigned the hostname `WIN11-CLIENT01` to the newly installed client.
+*   Confirmed that the existing Windows Server domain controller and OPNsense network configuration were preserved and unaffected by the new client deployment.
 
 Issues Encountered:
-1.  The existing DHCP configuration was incomplete upon inspection.
-2.  Required identification of the correct Kea DHCPv4 settings and subnet configuration pages within the OPNsense interface.
-3.  Limited session time prevented applying the configuration and validating service operation.
+*   None.
 
 Next Steps:
-1.  Apply the configured Kea DHCPv4 settings.
-2.  Validate the operation of the DHCPv4 service on the LAN interface by testing client IP address assignments.
+*   Test DHCP address assignment for `WIN11-CLIENT01`.
+*   Validate gateway connectivity from `WIN11-CLIENT01`.
+*   Utilize `WIN11-CLIENT01` for firewall policy validation.
+*   Conduct packet analysis involving traffic from `WIN11-CLIENT01`.
 
 Notes:
-The work focused on the foundational setup of Kea DHCPv4 to provide IP addresses within the 192.168.20.0/24 network segment. The host-only network configuration was essential for initial access and verification.
+*   The addition of `WIN11-CLIENT01` significantly enhances the lab's capability to simulate real-world client interactions for network and security testing scenarios.
 
 ## Evidence gallery
+### OPNSense LAN DHCP Subnet
+![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
+Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
+
 ### WAN DHCP Success
 ![WAN DHCP Success](screenshots/2026-10-13_142955_wan-dhcp-success.png)
 Evidence copied from [logs/2026-10-13.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-13.md) and verified against the source image.
@@ -62,8 +68,8 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### OPNSense LAN DHCP Subnet
-![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
+### OPNsense Kea DHCP Service Status (Active)
+![OPNsense Kea DHCP Service Status (Active)](screenshots/2026-10-20_163430_opnsense-kea-dhcp-service-status-active.png)
 Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
 
 ## Session highlights
