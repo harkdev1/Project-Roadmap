@@ -11,7 +11,7 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Verified OPNsense 26.7 interface assignments, confirmed WAN em0 at 192.168.148.129/24 and LAN em1 at 192.168.20.1/24, reviewed VMware VMnet2 host-only network configuration, identified and resolved an IP address conflict between the OPNsense LAN interface and the Windows host's VMnet2 adapter, changed the host adapter address from 192.168.20.1 to 192.168.20.2, verified OPNsense routing table and HTTPS listener,...
+Accessed the OPNsense 26.7 web interface through the host-only LAN network, verified the LAN interface at 192.168.20.1/24 and host adapter at 192.168.20.2/24, inspected Kea DHCPv4 settings and confirmed the service was initially disabled with no interface selected, inspected the subnet configuration and found zero existing subnet entries, created a LAN subnet entry for 192.168.20.0/24 with the address pool...
 
 [![WAN DHCP Success](projects/networking-infrastructure-engineering/screenshots/2026-10-13_142955_wan-dhcp-success.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->

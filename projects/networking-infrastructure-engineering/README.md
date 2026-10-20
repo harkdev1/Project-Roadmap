@@ -7,38 +7,31 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Verified OPNsense 26.7 interface assignments, confirmed WAN em0 at 192.168.148.129/24 and LAN em1 at 192.168.20.1/24, reviewed VMware VMnet2 host-only network configuration, identified and resolved an IP address conflict between the OPNsense LAN interface and the Windows host's VMnet2 adapter, changed the host adapter address from 192.168.20.1 to 192.168.20.2, verified OPNsense routing table and HTTPS listener, confirmed LAN interface status is active, successfully tested TCP connectivity from the physical Windows host to 192.168.20.1 on port 443.
+Accessed the OPNsense 26.7 web interface through the host-only LAN network, verified the LAN interface at 192.168.20.1/24 and host adapter at 192.168.20.2/24, inspected Kea DHCPv4 settings and confirmed the service was initially disabled with no interface selected, inspected the subnet configuration and found zero existing subnet entries, created a LAN subnet entry for 192.168.20.0/24 with the address pool 192.168.20.100–192.168.20.199, selected LAN as the Kea DHCPv4 service interface, checked the service Enabled option.
 
 Summary:
-Systematic network troubleshooting was performed on a virtualized OPNsense 26.7 firewall environment to resolve critical management connectivity issues. The primary problem identified was an IP address conflict between the OPNsense LAN interface (192.168.20.1/24) and the VMware VMnet2 host-only adapter on the Windows host. This conflict was successfully resolved by reconfiguring the host's VMnet2 adapter to 192.168.20.2/24. Post-resolution, OPNsense interface assignments, routing, and HTTPS listener functionality were verified, and successful TCP connectivity to the firewall's web interface on port 443 was established from the physical Windows host. This work preserved the existing domain controller configuration and restored essential HTTPS reachability to the firewall.
+Initial configuration of the Kea DHCPv4 service on OPNsense 26.7 was performed, including verification of network interfaces and creation of a DHCP subnet with an address pool for the LAN network.
 
 Tasks Completed:
-*   **OPNsense Interface Verification:** Confirmed OPNsense 26.7 interface assignments:
-    *   WAN: `em0` at `192.168.148.129/24`
-    *   LAN: `em1` at `192.168.20.1/24`
-*   **VMware Network Configuration Review:** Reviewed the VMware `VMnet2` host-only network configuration on the Windows host.
-*   **IP Address Conflict Resolution:**
-    *   Identified an IP address conflict between the OPNsense LAN interface (`192.168.20.1`) and the Windows host's `VMnet2` adapter.
-    *   Resolved the conflict by changing the Windows host's `VMnet2` adapter IP address from `192.168.20.1` to `192.168.20.2`.
-*   **OPNsense System Verification:**
-    *   Verified OPNsense routing table.
-    *   Confirmed OPNsense HTTPS listener is active on the LAN interface.
-    *   Confirmed LAN interface status is active.
-*   **Connectivity Testing:** Successfully tested TCP connectivity from the physical Windows host to the OPNsense LAN interface (`192.168.20.1`) on port `443` (HTTPS).
+1.  Accessed the OPNsense 26.7 web interface through the host-only LAN network.
+2.  Verified the LAN interface (192.168.20.1/24) and host adapter (192.168.20.2/24) network configurations.
+3.  Inspected Kea DHCPv4 settings, confirming the service was initially disabled with no interface selected.
+4.  Inspected subnet configuration, finding zero existing subnet entries.
+5.  Created a LAN subnet entry for 192.168.20.0/24 with the address pool 192.168.20.100–192.168.20.199.
+6.  Selected the LAN interface for the Kea DHCPv4 service.
+7.  Checked the service 'Enabled' option for Kea DHCPv4.
 
 Issues Encountered:
-*   **IP Address Conflict:** A critical IP address conflict existed where the Windows host's `VMnet2` adapter shared the same IP address (`192.168.20.1`) as the OPNsense LAN interface, preventing proper network communication.
-*   **HTTPS Access Timeouts:** Initial attempts to access the OPNsense web interface via HTTPS timed out directly as a symptom of the underlying IP address conflict.
-*   **Troubleshooting Complexity:** Distinguishing between host network configuration issues and firewall configuration issues required focused troubleshooting efforts.
+1.  The existing DHCP configuration was incomplete upon inspection.
+2.  Required identification of the correct Kea DHCPv4 settings and subnet configuration pages within the OPNsense interface.
+3.  Limited session time prevented applying the configuration and validating service operation.
 
 Next Steps:
-*   Validate DHCP functionality on the OPNsense LAN interface.
+1.  Apply the configured Kea DHCPv4 settings.
+2.  Validate the operation of the DHCPv4 service on the LAN interface by testing client IP address assignments.
 
 Notes:
-*   No AI-related errors or misses were identified during this process.
-*   The troubleshooting process emphasized systematic verification of virtual network components and firewall configurations.
-*   The environment involved OPNsense 26.7, a VMware virtual machine, and a physical Windows host.
-*   Preservation of existing domain controller configuration was a key consideration; no changes to the DC were performed or required.
+The work focused on the foundational setup of Kea DHCPv4 to provide IP addresses within the 192.168.20.0/24 network segment. The host-only network configuration was essential for initial access and verification.
 
 ## Evidence gallery
 ### WAN DHCP Success
@@ -69,7 +62,15 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
+### OPNSense LAN DHCP Subnet
+![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
+Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-10-20 · 05:57 to 06:07
+Recorded outcome: ❌ No. Initial configuration of the Kea DHCPv4 service on OPNsense 26.7 was performed, including verification of network interfaces and creation of a DHCP subnet with an address pool for the LAN network.
+[Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md)
 
 ### 2026-10-16 · 05:24 to 05:51
 Recorded outcome: ❌ No. Systematic network troubleshooting was performed on a virtualized OPNsense 26.7 firewall environment to resolve critical management connectivity issues. The primary problem identified was an IP address conflict between the OPNsense LAN interface (192.168.20.1/24) and the VMware VMnet2 host-only adapter on the Windows host. This conflict was successfully resolved by reconfiguring the host's VMnet2 adapter to 192.168.20.2/24. Post-resolution, OPNsense interface assignments, routing, and HTTPS listener functionality were verified, and successful TCP connectivity to the firewall's web interface on port 443 was established from the physical Windows host. This work...
