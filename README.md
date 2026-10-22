@@ -11,7 +11,7 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Created WIN11-CLIENT01 in VMware Workstation, configured 4 GB RAM and 2 vCPUs, allocated a 64 GB virtual disk, connected the client to VMnet2 Host-only, installed Windows 11, assigned the hostname WIN11-CLIENT01, preserved the existing Windows Server domain controller and OPNsense network configuration. Summary: A new Windows 11 client endpoint, `WIN11-CLIENT01`, has been successfully deployed and configured...
+Configured OPNsense Kea DHCPv4 for the LAN subnet 192.168.20.0/24, configured the DHCP pool 192.168.20.100–192.168.20.199, connected the Windows 11 client WIN11-CLIENT01 to VMnet2, verified its assigned address 192.168.20.165, verified gateway connectivity to 192.168.20.1, verified external connectivity with ping 1.1.1.1, verified public DNS resolution with nslookup example.com, verified HTTPS connectivity with...
 
 [![OPNSense LAN DHCP Subnet](projects/networking-infrastructure-engineering/screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->

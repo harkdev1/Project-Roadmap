@@ -7,37 +7,29 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Created WIN11-CLIENT01 in VMware Workstation, configured 4 GB RAM and 2 vCPUs, allocated a 64 GB virtual disk, connected the client to VMnet2 Host-only, installed Windows 11, assigned the hostname WIN11-CLIENT01, preserved the existing Windows Server domain controller and OPNsense network configuration.
+Configured OPNsense Kea DHCPv4 for the LAN subnet 192.168.20.0/24, configured the DHCP pool 192.168.20.100–192.168.20.199, connected the Windows 11 client WIN11-CLIENT01 to VMnet2, verified its assigned address 192.168.20.165, verified gateway connectivity to 192.168.20.1, verified external connectivity with ping 1.1.1.1, verified public DNS resolution with nslookup example.com, verified HTTPS connectivity with Test-NetConnection example.com -Port 443, reviewed the default IPv4 and IPv6 LAN firewall pass rules.
 
 Summary:
-A new Windows 11 client endpoint, `WIN11-CLIENT01`, has been successfully deployed and configured within the lab environment. This expansion provides a dedicated client for comprehensive network and security testing, establishing the foundation for validating DHCP address assignment, gateway connectivity, and preparing for future firewall policy validation and packet analysis. The existing Windows Server domain controller and OPNsense network configuration were preserved without modification.
+The Windows 11 client is receiving a DHCP lease from OPNsense, can reach the LAN gateway, resolve public DNS names, reach the internet by IP, and establish an HTTPS connection.
 
 Tasks Completed:
-*   Created a new virtual machine named `WIN11-CLIENT01` in VMware Workstation.
-*   Configured virtual hardware for `WIN11-CLIENT01`:
-    *   RAM: 4 GB
-    *   vCPUs: 2
-    *   Virtual Disk: 64 GB
-*   Connected the `WIN11-CLIENT01` virtual machine to the `VMnet2` (Host-only) network.
-*   Installed the Windows 11 operating system on `WIN11-CLIENT01`.
-*   Assigned the hostname `WIN11-CLIENT01` to the newly installed client.
-*   Confirmed that the existing Windows Server domain controller and OPNsense network configuration were preserved and unaffected by the new client deployment.
+Configured OPNsense Kea DHCPv4 for LAN subnet, configured DHCP address pool, connected Windows 11 client to VMnet2, verified DHCP lease assignment, verified LAN gateway connectivity, validated external IP connectivity, verified public DNS resolution, validated outbound HTTPS connectivity, reviewed default IPv4 and IPv6 LAN firewall rules, identified default allow rules requiring segmentation testing
 
 Issues Encountered:
-*   None.
+DHCP configuration verification required multiple checks, distinguishing automatically generated firewall rules from editable interface rules, default LAN rules allow broad traffic and do not yet demonstrate segmentation, Windows 11 client setup added time to the session
 
 Next Steps:
-*   Test DHCP address assignment for `WIN11-CLIENT01`.
-*   Validate gateway connectivity from `WIN11-CLIENT01`.
-*   Utilize `WIN11-CLIENT01` for firewall policy validation.
-*   Conduct packet analysis involving traffic from `WIN11-CLIENT01`.
+Validate controlled firewall behavior on the OPNsense LAN, begin testing permitted and blocked traffic from WIN11-CLIENT01
 
 Notes:
-*   The addition of `WIN11-CLIENT01` significantly enhances the lab's capability to simulate real-world client interactions for network and security testing scenarios.
 
 ## Evidence gallery
 ### OPNSense LAN DHCP Subnet
 ![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
+Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
+
+### OPNsense Kea DHCP Service Status (Active)
+![OPNsense Kea DHCP Service Status (Active)](screenshots/2026-10-20_163430_opnsense-kea-dhcp-service-status-active.png)
 Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
 
 ### WAN DHCP Success
@@ -68,11 +60,27 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### OPNsense Kea DHCP Service Status (Active)
-![OPNsense Kea DHCP Service Status (Active)](screenshots/2026-10-20_163430_opnsense-kea-dhcp-service-status-active.png)
-Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
+### WIN11-CLIENT Installation Complete
+![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### Win11 Client01 Single LAN DHCP Verified
+![Win11 Client01 Single LAN DHCP Verified](screenshots/2026-10-22_052108_win11-client01-single-lan-dhcp-verified.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### Win11 Client01 Outbound Connectivity Test
+![Win11 Client01 Outbound Connectivity Test](screenshots/2026-10-22_052356_win11-client01-outbound-connectivity-test.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### OPNSense LAN Firewall Rules Baseline
+![OPNSense LAN Firewall Rules Baseline](screenshots/2026-10-22_052753_opnsense-lan-firewall-rules-baseline.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
 
 ## Session highlights
+
+### 2026-10-22 · 05:05 to 05:36
+Recorded outcome: ✅ Yes. The Windows 11 client is receiving a DHCP lease from OPNsense, can reach the LAN gateway, resolve public DNS names, reach the internet by IP, and establish an HTTPS connection.
+[Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md)
 
 ### 2026-10-20 · 05:57 to 06:07
 Recorded outcome: ❌ No. Initial configuration of the Kea DHCPv4 service on OPNsense 26.7 was performed, including verification of network interfaces and creation of a DHCP subnet with an address pool for the LAN network.

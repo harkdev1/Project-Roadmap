@@ -11,6 +11,11 @@ Screenshots below are copied only when referenced by an AutoDoc source log. Each
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md). Image copied from the log reference and SHA-256 verified.
 
+### OPNsense Kea DHCP Service Status (Active)
+![OPNsense Kea DHCP Service Status (Active)](screenshots/2026-10-20_163430_opnsense-kea-dhcp-service-status-active.png)
+This screenshot shows the working interface or project state that is currently being shaped to communicate the latest status, progress, and story. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md). Image copied from the log reference and SHA-256 verified.
+
 ### WAN DHCP Success
 ![WAN DHCP Success](screenshots/2026-10-13_142955_wan-dhcp-success.png)
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
@@ -46,8 +51,23 @@ Source: [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructu
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md). Image copied from the log reference and SHA-256 verified.
 
-### OPNsense Kea DHCP Service Status (Active)
-![OPNsense Kea DHCP Service Status (Active)](screenshots/2026-10-20_163430_opnsense-kea-dhcp-service-status-active.png)
-This screenshot shows the working interface or project state that is currently being shaped to communicate the latest status, progress, and story. It highlights the key detail the viewer should notice in this stage of the project.
-Source: [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md). Image copied from the log reference and SHA-256 verified.
+### WIN11-CLIENT Installation Complete
+![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+
+### Win11 Client01 Single LAN DHCP Verified
+![Win11 Client01 Single LAN DHCP Verified](screenshots/2026-10-22_052108_win11-client01-single-lan-dhcp-verified.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+
+### Win11 Client01 Outbound Connectivity Test
+![Win11 Client01 Outbound Connectivity Test](screenshots/2026-10-22_052356_win11-client01-outbound-connectivity-test.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+
+### OPNSense LAN Firewall Rules Baseline
+![OPNSense LAN Firewall Rules Baseline](screenshots/2026-10-22_052753_opnsense-lan-firewall-rules-baseline.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->
