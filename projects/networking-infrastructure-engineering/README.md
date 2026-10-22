@@ -7,23 +7,47 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Configured OPNsense Kea DHCPv4 for the LAN subnet 192.168.20.0/24, configured the DHCP pool 192.168.20.100–192.168.20.199, connected the Windows 11 client WIN11-CLIENT01 to VMnet2, verified its assigned address 192.168.20.165, verified gateway connectivity to 192.168.20.1, verified external connectivity with ping 1.1.1.1, verified public DNS resolution with nslookup example.com, verified HTTPS connectivity with Test-NetConnection example.com -Port 443, reviewed the default IPv4 and IPv6 LAN firewall pass rules.
+Configured OPNsense WAN and LAN baseline, confirmed DHCP/DNS and outbound client connectivity, validated firewall enforcement with a temporary ICMP block and reviewed firewall logs, added a third virtual network adapter, assigned em2 to the SERVERS interface, configured the intended address 192.168.10.1/24, mapped the new adapter to VMware VMnet1
 
 Summary:
-The Windows 11 client is receiving a DHCP lease from OPNsense, can reach the LAN gateway, resolve public DNS names, reach the internet by IP, and establish an HTTPS connection.
+This phase established the foundational OPNsense networking baseline, configuring both WAN and LAN interfaces and validating essential network services such as DHCP and DNS, along with outbound client connectivity. Firewall rule enforcement was successfully demonstrated through temporary ICMP blocking and log analysis. The network topology was further extended with the addition of a third interface designated for a future server network.
 
 Tasks Completed:
-Configured OPNsense Kea DHCPv4 for LAN subnet, configured DHCP address pool, connected Windows 11 client to VMnet2, verified DHCP lease assignment, verified LAN gateway connectivity, validated external IP connectivity, verified public DNS resolution, validated outbound HTTPS connectivity, reviewed default IPv4 and IPv6 LAN firewall rules, identified default allow rules requiring segmentation testing
+*   Configured the OPNsense WAN and LAN interfaces.
+*   Confirmed DHCP, DNS resolution, and outbound internet connectivity for client devices.
+*   Validated firewall rule enforcement by implementing and logging a temporary ICMP block.
+*   Added a third virtual network adapter within VMware and mapped it to VMnet1.
+*   Assigned the new virtual adapter (em2) within OPNsense to the 'SERVERS' interface.
+*   Configured the 'SERVERS' interface with the intended static IP address of 192.168.10.1/24.
 
 Issues Encountered:
-DHCP configuration verification required multiple checks, distinguishing automatically generated firewall rules from editable interface rules, default LAN rules allow broad traffic and do not yet demonstrate segmentation, Windows 11 client setup added time to the session
+*   The expected VMnet3 option was unexpectedly unavailable in the OPNsense adapter dropdown list, necessitating alternative mapping.
+*   Interface detection and subsequent assignment within OPNsense required direct console troubleshooting due to initial challenges.
+*   Project progress was slower than anticipated due to repeated configuration checks and verification steps.
 
 Next Steps:
-Validate controlled firewall behavior on the OPNsense LAN, begin testing permitted and blocked traffic from WIN11-CLIENT01
+*   Adopt a more efficient, milestone-based validation approach for future tasks to ensure steady progress and minimize redundant checks.
 
 Notes:
+Observations indicate that prior procedural steps involved repeating previously completed verification, revisiting known interface and VMware settings, and a lack of consistent comparison of new screenshots against established evidence before proceeding. This led to prioritizing repeated checking over moving to the next deliverable, highlighting an area for process improvement in future engineering documentation workflows.
 
 ## Evidence gallery
+### WIN11-CLIENT Installation Complete
+![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### Win11 Client01 Single LAN DHCP Verified
+![Win11 Client01 Single LAN DHCP Verified](screenshots/2026-10-22_052108_win11-client01-single-lan-dhcp-verified.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### Win11 Client01 Outbound Connectivity Test
+![Win11 Client01 Outbound Connectivity Test](screenshots/2026-10-22_052356_win11-client01-outbound-connectivity-test.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### OPNSense LAN Firewall Rules Baseline
+![OPNSense LAN Firewall Rules Baseline](screenshots/2026-10-22_052753_opnsense-lan-firewall-rules-baseline.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
 ### OPNSense LAN DHCP Subnet
 ![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
 Evidence copied from [logs/2026-10-20.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-20.md) and verified against the source image.
@@ -60,20 +84,12 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### WIN11-CLIENT Installation Complete
-![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
+### OPNsense ICMP Block Log Evidence
+![OPNsense ICMP Block Log Evidence](screenshots/2026-10-22_131421_opnsense-icmp-block-log-evidence.png)
 Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
 
-### Win11 Client01 Single LAN DHCP Verified
-![Win11 Client01 Single LAN DHCP Verified](screenshots/2026-10-22_052108_win11-client01-single-lan-dhcp-verified.png)
-Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
-
-### Win11 Client01 Outbound Connectivity Test
-![Win11 Client01 Outbound Connectivity Test](screenshots/2026-10-22_052356_win11-client01-outbound-connectivity-test.png)
-Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
-
-### OPNSense LAN Firewall Rules Baseline
-![OPNSense LAN Firewall Rules Baseline](screenshots/2026-10-22_052753_opnsense-lan-firewall-rules-baseline.png)
+### OPNsense Firewall Test Results
+![OPNsense Firewall Test Results](screenshots/2026-10-22_143528_opnsense-firewall-test-results.png)
 Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
 
 ## Session highlights

@@ -11,9 +11,9 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Configured OPNsense Kea DHCPv4 for the LAN subnet 192.168.20.0/24, configured the DHCP pool 192.168.20.100–192.168.20.199, connected the Windows 11 client WIN11-CLIENT01 to VMnet2, verified its assigned address 192.168.20.165, verified gateway connectivity to 192.168.20.1, verified external connectivity with ping 1.1.1.1, verified public DNS resolution with nslookup example.com, verified HTTPS connectivity with...
+Configured OPNsense WAN and LAN baseline, confirmed DHCP/DNS and outbound client connectivity, validated firewall enforcement with a temporary ICMP block and reviewed firewall logs, added a third virtual network adapter, assigned em2 to the SERVERS interface, configured the intended address 192.168.10.1/24, mapped the new adapter to VMware VMnet1 Summary: This phase established the foundational OPNsense...
 
-[![OPNSense LAN DHCP Subnet](projects/networking-infrastructure-engineering/screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)](projects/networking-infrastructure-engineering/README.md)
+[![WIN11-CLIENT Installation Complete](projects/networking-infrastructure-engineering/screenshots/2026-10-22_051239_win11-client-installation-complete.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
 
 <!-- autodoc:project:project:start -->
