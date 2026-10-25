@@ -6,6 +6,16 @@ Screenshots below are copied only when referenced by an AutoDoc source log. Each
 
 
 <!-- autodoc:evidence-gallery:start -->
+### Servers Firewall Log
+![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
+This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
+
+### Server Firewall Block Rule (Test)
+![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
+
 ### WIN11-CLIENT Installation Complete
 ![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
@@ -81,13 +91,8 @@ Source: [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructu
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md). Image copied from the log reference and SHA-256 verified.
 
-### Servers Firewall Log
-![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
-This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
-Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
-
-### Server Firewall Block Rule (Test)
-![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
-This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+### Lan-Validation
+![Lan-Validation](screenshots/2026-10-25_181025_lan-validation.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->

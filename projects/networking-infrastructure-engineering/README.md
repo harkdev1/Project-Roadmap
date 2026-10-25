@@ -7,33 +7,53 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Validated OPNsense SERVERS interface at 192.168.10.1/24, connected WIN11-CLIENT01 to VMnet1 as a temporary test endpoint, confirmed gateway reachability with 4/4 successful ICMP replies, created and tested a temporary ICMP block rule, confirmed blocked traffic in OPNsense firewall logs
+Configured and validated the OPNsense WAN, LAN, and SERVERS interfaces, verified the additional SERVERS subnet and tested gateway reachability, demonstrated targeted ICMP blocking and confirmed blocked traffic in firewall logs, validated Windows client gateway connectivity and outbound access, confirmed DNS resolution and HTTPS connectivity, documented network addressing and firewall behavior, created validation results and limitations documentation, prepared a PowerShell network validation script, captured LAN validation evidence, updated the network topology artifact.
 
 Summary:
-An additional virtual network interface was configured on OPNsense, and endpoint-to-gateway connectivity was successfully demonstrated. Firewall enforcement was verified by creating and testing a temporary ICMP block rule, with traffic confirmation in live logs. However, an issue was identified where connectivity did not recover after the temporary firewall rule was removed, indicating a potential firewall cleanup problem requiring follow-up investigation.
+This task involved the configuration and validation of OPNsense WAN, LAN, and SERVERS interfaces, including the integration of a new SERVERS subnet and verification of gateway reachability. Targeted ICMP blocking was successfully demonstrated and logged. Comprehensive client validation was performed, confirming gateway connectivity, outbound access, DNS resolution, and HTTPS connectivity. All pertinent documentation, including network addressing, firewall behavior, validation results, limitations, and network topology, was updated. A PowerShell network validation script was also prepared. However, significant issues were encountered, most notably the unexpected failure of SERVERS subnet connectivity to recover after removal of a temporary ICMP block rule, and the subsequent unverified state of post-cleanup gateway connectivity. Other challenges included an accidental initial validation on the host PC, misinterpretation of PowerShell output, and an extended documentation and repository review process.
 
 Tasks Completed:
-*   Validated the OPNsense SERVERS virtual network interface configuration at 192.168.10.1/24.
-*   Connected WIN11-CLIENT01 to VMnet1, establishing it as a temporary test endpoint.
-*   Confirmed successful endpoint-to-gateway connectivity from WIN11-CLIENT01 to OPNsense via ICMP, receiving 4/4 successful replies.
-*   Created and tested a temporary ICMP block rule on OPNsense to deny ping traffic.
-*   Confirmed that traffic was successfully blocked and recorded in the OPNsense firewall logs during the rule's active period.
+*   Configured and validated OPNsense WAN, LAN, and SERVERS interfaces.
+*   Verified the additional SERVERS subnet and tested gateway reachability.
+*   Demonstrated targeted ICMP blocking and confirmed blocked traffic in firewall logs.
+*   Validated Windows client gateway connectivity and outbound access.
+*   Confirmed DNS resolution and HTTPS connectivity for client systems.
+*   Documented network addressing and firewall rule behavior.
+*   Created validation results and limitations documentation.
+*   Prepared a PowerShell network validation script.
+*   Captured LAN validation evidence.
+*   Updated the network topology artifact.
 
 Issues Encountered:
-*   Connectivity from WIN11-CLIENT01 to the OPNsense gateway did not recover after the temporary ICMP block rule was removed.
-*   Repeated ping tests did not resolve the connectivity loss.
-*   It is suspected that firewall changes may have remained pending or unapplied, even after rule removal, preventing the restoration of network connectivity.
+*   Connectivity for the SERVERS subnet did not recover as expected after removal of a temporary ICMP block rule.
+*   Post-cleanup gateway connectivity remains unverified across affected interfaces.
+*   Initial validation attempts were accidentally performed on the host PC rather than the designated Windows client VM.
+*   PowerShell script output was initially misinterpreted, requiring additional analysis to correctly interpret results.
+*   The final documentation and repository review process took longer than originally estimated.
 
 Next Steps:
-*   Investigate the OPNsense firewall's state to determine why connectivity did not restore after rule removal (e.g., check `pfctl -sr` and `pfctl -si` for persistent rules or state table issues).
-*   Attempt to manually reapply firewall rules or restart the firewall service to clear any stuck or unapplied configurations.
-*   Re-establish and confirm endpoint-to-gateway connectivity from WIN11-CLIENT01.
-*   Document procedures for ensuring proper firewall rule cleanup and application consistency on OPNsense.
+*   Investigate and resolve the SERVERS subnet connectivity issue that arose after the temporary ICMP block rule removal.
+*   Perform comprehensive verification of gateway connectivity for all interfaces post-cleanup.
+*   Review and refine the PowerShell network validation script to improve clarity and prevent future misinterpretations.
 
 Notes:
-None.
+*   No AI-related issues or inaccuracies were identified during this task.
+*   **Key points of emphasis from this work include:**
+    *   The unexpected failure of SERVERS subnet connectivity to recover after removal of a temporary ICMP block rule.
+    *   The current unverified state of post-cleanup gateway connectivity.
+    *   The initial validation error of running checks on the host PC instead of the client VM.
+    *   The initial misinterpretation of PowerShell output, highlighting a need for careful review.
+    *   The extended duration required for final documentation and repository review.
 
 ## Evidence gallery
+### Servers Firewall Log
+![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
+
+### Server Firewall Block Rule (Test)
+![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
+
 ### WIN11-CLIENT Installation Complete
 ![WIN11-CLIENT Installation Complete](screenshots/2026-10-22_051239_win11-client-installation-complete.png)
 Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
@@ -94,12 +114,8 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### Servers Firewall Log
-![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
-Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
-
-### Server Firewall Block Rule (Test)
-![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+### Lan-Validation
+![Lan-Validation](screenshots/2026-10-25_181025_lan-validation.png)
 Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
 
 ## Session highlights
