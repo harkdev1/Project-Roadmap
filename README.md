@@ -11,7 +11,7 @@ Starting from the fundamentals, building progressively, and following curiosity 
 
 **In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Configured OPNsense WAN and LAN baseline, confirmed DHCP/DNS and outbound client connectivity, validated firewall enforcement with a temporary ICMP block and reviewed firewall logs, added a third virtual network adapter, assigned em2 to the SERVERS interface, configured the intended address 192.168.10.1/24, mapped the new adapter to VMware VMnet1 Summary: This phase established the foundational OPNsense...
+Validated OPNsense SERVERS interface at 192.168.10.1/24, connected WIN11-CLIENT01 to VMnet1 as a temporary test endpoint, confirmed gateway reachability with 4/4 successful ICMP replies, created and tested a temporary ICMP block rule, confirmed blocked traffic in OPNsense firewall logs Summary: An additional virtual network interface was configured on OPNsense, and endpoint-to-gateway connectivity was...
 
 [![WIN11-CLIENT Installation Complete](projects/networking-infrastructure-engineering/screenshots/2026-10-22_051239_win11-client-installation-complete.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->

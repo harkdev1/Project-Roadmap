@@ -7,29 +7,31 @@
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Configured OPNsense WAN and LAN baseline, confirmed DHCP/DNS and outbound client connectivity, validated firewall enforcement with a temporary ICMP block and reviewed firewall logs, added a third virtual network adapter, assigned em2 to the SERVERS interface, configured the intended address 192.168.10.1/24, mapped the new adapter to VMware VMnet1
+Validated OPNsense SERVERS interface at 192.168.10.1/24, connected WIN11-CLIENT01 to VMnet1 as a temporary test endpoint, confirmed gateway reachability with 4/4 successful ICMP replies, created and tested a temporary ICMP block rule, confirmed blocked traffic in OPNsense firewall logs
 
 Summary:
-This phase established the foundational OPNsense networking baseline, configuring both WAN and LAN interfaces and validating essential network services such as DHCP and DNS, along with outbound client connectivity. Firewall rule enforcement was successfully demonstrated through temporary ICMP blocking and log analysis. The network topology was further extended with the addition of a third interface designated for a future server network.
+An additional virtual network interface was configured on OPNsense, and endpoint-to-gateway connectivity was successfully demonstrated. Firewall enforcement was verified by creating and testing a temporary ICMP block rule, with traffic confirmation in live logs. However, an issue was identified where connectivity did not recover after the temporary firewall rule was removed, indicating a potential firewall cleanup problem requiring follow-up investigation.
 
 Tasks Completed:
-*   Configured the OPNsense WAN and LAN interfaces.
-*   Confirmed DHCP, DNS resolution, and outbound internet connectivity for client devices.
-*   Validated firewall rule enforcement by implementing and logging a temporary ICMP block.
-*   Added a third virtual network adapter within VMware and mapped it to VMnet1.
-*   Assigned the new virtual adapter (em2) within OPNsense to the 'SERVERS' interface.
-*   Configured the 'SERVERS' interface with the intended static IP address of 192.168.10.1/24.
+*   Validated the OPNsense SERVERS virtual network interface configuration at 192.168.10.1/24.
+*   Connected WIN11-CLIENT01 to VMnet1, establishing it as a temporary test endpoint.
+*   Confirmed successful endpoint-to-gateway connectivity from WIN11-CLIENT01 to OPNsense via ICMP, receiving 4/4 successful replies.
+*   Created and tested a temporary ICMP block rule on OPNsense to deny ping traffic.
+*   Confirmed that traffic was successfully blocked and recorded in the OPNsense firewall logs during the rule's active period.
 
 Issues Encountered:
-*   The expected VMnet3 option was unexpectedly unavailable in the OPNsense adapter dropdown list, necessitating alternative mapping.
-*   Interface detection and subsequent assignment within OPNsense required direct console troubleshooting due to initial challenges.
-*   Project progress was slower than anticipated due to repeated configuration checks and verification steps.
+*   Connectivity from WIN11-CLIENT01 to the OPNsense gateway did not recover after the temporary ICMP block rule was removed.
+*   Repeated ping tests did not resolve the connectivity loss.
+*   It is suspected that firewall changes may have remained pending or unapplied, even after rule removal, preventing the restoration of network connectivity.
 
 Next Steps:
-*   Adopt a more efficient, milestone-based validation approach for future tasks to ensure steady progress and minimize redundant checks.
+*   Investigate the OPNsense firewall's state to determine why connectivity did not restore after rule removal (e.g., check `pfctl -sr` and `pfctl -si` for persistent rules or state table issues).
+*   Attempt to manually reapply firewall rules or restart the firewall service to clear any stuck or unapplied configurations.
+*   Re-establish and confirm endpoint-to-gateway connectivity from WIN11-CLIENT01.
+*   Document procedures for ensuring proper firewall rule cleanup and application consistency on OPNsense.
 
 Notes:
-Observations indicate that prior procedural steps involved repeating previously completed verification, revisiting known interface and VMware settings, and a lack of consistent comparison of new screenshots against established evidence before proceeding. This led to prioritizing repeated checking over moving to the next deliverable, highlighting an area for process improvement in future engineering documentation workflows.
+None.
 
 ## Evidence gallery
 ### WIN11-CLIENT Installation Complete
@@ -46,6 +48,14 @@ Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking
 
 ### OPNSense LAN Firewall Rules Baseline
 ![OPNSense LAN Firewall Rules Baseline](screenshots/2026-10-22_052753_opnsense-lan-firewall-rules-baseline.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### OPNsense ICMP Block Log Evidence
+![OPNsense ICMP Block Log Evidence](screenshots/2026-10-22_131421_opnsense-icmp-block-log-evidence.png)
+Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+
+### OPNsense Firewall Test Results
+![OPNsense Firewall Test Results](screenshots/2026-10-22_143528_opnsense-firewall-test-results.png)
 Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
 
 ### OPNSense LAN DHCP Subnet
@@ -84,15 +94,19 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### OPNsense ICMP Block Log Evidence
-![OPNsense ICMP Block Log Evidence](screenshots/2026-10-22_131421_opnsense-icmp-block-log-evidence.png)
-Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+### Servers Firewall Log
+![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
 
-### OPNsense Firewall Test Results
-![OPNsense Firewall Test Results](screenshots/2026-10-22_143528_opnsense-firewall-test-results.png)
-Evidence copied from [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md) and verified against the source image.
+### Server Firewall Block Rule (Test)
+![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
 
 ## Session highlights
+
+### 2026-10-25 · 08:45 to 09:14
+Recorded outcome: ✅ Yes. An additional virtual network interface was configured on OPNsense, and endpoint-to-gateway connectivity was successfully demonstrated. Firewall enforcement was verified by creating and testing a temporary ICMP block rule, with traffic confirmation in live logs. However, an issue was identified where connectivity did not recover after the temporary firewall rule was removed, indicating a potential firewall cleanup problem requiring follow-up investigation.
+[Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md)
 
 ### 2026-10-22 · 05:05 to 05:36
 Recorded outcome: ✅ Yes. The Windows 11 client is receiving a DHCP lease from OPNsense, can reach the LAN gateway, resolve public DNS names, reach the internet by IP, and establish an HTTPS connection.

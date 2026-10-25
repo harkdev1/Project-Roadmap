@@ -26,6 +26,16 @@ Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructu
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
 
+### OPNsense ICMP Block Log Evidence
+![OPNsense ICMP Block Log Evidence](screenshots/2026-10-22_131421_opnsense-icmp-block-log-evidence.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+
+### OPNsense Firewall Test Results
+![OPNsense Firewall Test Results](screenshots/2026-10-22_143528_opnsense-firewall-test-results.png)
+This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+
 ### OPNSense LAN DHCP Subnet
 ![OPNSense LAN DHCP Subnet](screenshots/2026-10-20_060316_opnsense-lan-dhcp-subnet.png)
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
@@ -71,13 +81,13 @@ Source: [logs/2026-10-12.md](https://github.com/harkdev1/networking-infrastructu
 This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
 Source: [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md). Image copied from the log reference and SHA-256 verified.
 
-### OPNsense ICMP Block Log Evidence
-![OPNsense ICMP Block Log Evidence](screenshots/2026-10-22_131421_opnsense-icmp-block-log-evidence.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
-Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+### Servers Firewall Log
+![Servers Firewall Log](screenshots/2026-10-25_085739_servers-firewall-log.png)
+This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
 
-### OPNsense Firewall Test Results
-![OPNsense Firewall Test Results](screenshots/2026-10-22_143528_opnsense-firewall-test-results.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
-Source: [logs/2026-10-22.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-22.md). Image copied from the log reference and SHA-256 verified.
+### Server Firewall Block Rule (Test)
+![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+Source: [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->
