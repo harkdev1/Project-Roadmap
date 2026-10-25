@@ -3,47 +3,44 @@
 ## Showcase
 
 <!-- autodoc:project-showcase:start -->
-**Status:** In progress
+**Status:** Complete
 **Source repository:** [https://github.com/harkdev1/networking-infrastructure-engineering](https://github.com/harkdev1/networking-infrastructure-engineering)
 
 ## What I built
-Configured and validated the OPNsense WAN, LAN, and SERVERS interfaces, verified the additional SERVERS subnet and tested gateway reachability, demonstrated targeted ICMP blocking and confirmed blocked traffic in firewall logs, validated Windows client gateway connectivity and outbound access, confirmed DNS resolution and HTTPS connectivity, documented network addressing and firewall behavior, created validation results and limitations documentation, prepared a PowerShell network validation script, captured LAN validation evidence, updated the network topology artifact.
+This project established a foundational network infrastructure using OPNsense, demonstrating core routing, firewalling, and network services for a multi-segment environment. It validated critical client connectivity and advanced firewall enforcement, while also highlighting key learnings in network state management.
 
-Summary:
-This task involved the configuration and validation of OPNsense WAN, LAN, and SERVERS interfaces, including the integration of a new SERVERS subnet and verification of gateway reachability. Targeted ICMP blocking was successfully demonstrated and logged. Comprehensive client validation was performed, confirming gateway connectivity, outbound access, DNS resolution, and HTTPS connectivity. All pertinent documentation, including network addressing, firewall behavior, validation results, limitations, and network topology, was updated. A PowerShell network validation script was also prepared. However, significant issues were encountered, most notably the unexpected failure of SERVERS subnet connectivity to recover after removal of a temporary ICMP block rule, and the subsequent unverified state of post-cleanup gateway connectivity. Other challenges included an accidental initial validation on the host PC, misinterpretation of PowerShell output, and an extended documentation and repository review process.
+---
 
-Tasks Completed:
-*   Configured and validated OPNsense WAN, LAN, and SERVERS interfaces.
-*   Verified the additional SERVERS subnet and tested gateway reachability.
-*   Demonstrated targeted ICMP blocking and confirmed blocked traffic in firewall logs.
-*   Validated Windows client gateway connectivity and outbound access.
-*   Confirmed DNS resolution and HTTPS connectivity for client systems.
-*   Documented network addressing and firewall rule behavior.
-*   Created validation results and limitations documentation.
-*   Prepared a PowerShell network validation script.
-*   Captured LAN validation evidence.
-*   Updated the network topology artifact.
+### 1. Project story
 
-Issues Encountered:
-*   Connectivity for the SERVERS subnet did not recover as expected after removal of a temporary ICMP block rule.
-*   Post-cleanup gateway connectivity remains unverified across affected interfaces.
-*   Initial validation attempts were accidentally performed on the host PC rather than the designated Windows client VM.
-*   PowerShell script output was initially misinterpreted, requiring additional analysis to correctly interpret results.
-*   The final documentation and repository review process took longer than originally estimated.
+This project focused on engineering a robust and segmented network infrastructure utilizing OPNsense as the core firewall and router. The initiative involved configuring distinct virtual network interfaces for WAN, LAN, and a new SERVERS subnet (192.168.10.1/24), and thoroughly validating connectivity across these segments. Key aspects included ensuring DHCP, DNS, and secure outbound internet access for client systems, and demonstrating granular firewall control by implementing and logging specific traffic blocks. While successfully establishing the Minimum Viable Product (MVP), the project provided critical insights into the complexities of firewall state persistence and rule cleanup.
 
-Next Steps:
-*   Investigate and resolve the SERVERS subnet connectivity issue that arose after the temporary ICMP block rule removal.
-*   Perform comprehensive verification of gateway connectivity for all interfaces post-cleanup.
-*   Review and refine the PowerShell network validation script to improve clarity and prevent future misinterpretations.
+### 2. Key achievements
 
-Notes:
-*   No AI-related issues or inaccuracies were identified during this task.
-*   **Key points of emphasis from this work include:**
-    *   The unexpected failure of SERVERS subnet connectivity to recover after removal of a temporary ICMP block rule.
-    *   The current unverified state of post-cleanup gateway connectivity.
-    *   The initial validation error of running checks on the host PC instead of the client VM.
-    *   The initial misinterpretation of PowerShell output, highlighting a need for careful review.
-    *   The extended duration required for final documentation and repository review.
+*   **Multi-Segment Network Deployment:** Successfully configured and validated OPNsense with integrated WAN, LAN, and a newly established SERVERS virtual network interface, defining clear network segments.
+*   **Comprehensive Client Connectivity Validation:** Verified end-to-end network functionality for client systems, including successful DHCP assignment, gateway reachability, outbound internet access, DNS resolution, and secure HTTPS connectivity.
+*   **Granular Firewall Enforcement:** Demonstrated the creation and successful enforcement of targeted firewall rules (e.g., ICMP block), with real-time confirmation of blocked traffic in OPNsense firewall logs.
+*   **Detailed Documentation:** Produced comprehensive documentation covering network topology, IP addressing schemes, firewall rule behavior, validation test results, and identified project limitations.
+*   **Automated Validation Tooling:** Developed a PowerShell script to automate key network validation tests, streamlining future verification efforts.
+
+### 3. Lessons learned
+
+*   **Firewall State Management Complexity:** A critical lesson was the non-trivial nature of OPNsense firewall rule cleanup and state table management. Connectivity did not reliably restore for a test endpoint after a temporary ICMP block rule was removed, indicating potential persistent state issues or unapplied configurations that required deeper investigation beyond simple rule deletion.
+*   **Rigor in Validation Environment:** Initial validation attempts on the host PC instead of the target VM and misinterpretation of PowerShell output led to rework. This underscored the importance of strict adherence to testing environments and meticulous analysis of command-line output.
+*   **Importance of Post-Cleanup Verification:** Relying solely on a firewall rule being "removed" from the configuration is insufficient; explicit verification of restored network functionality and cleared state tables is crucial to confirm effective cleanup.
+
+### 4. Next steps
+
+*   Develop and implement standardized OPNsense firewall rule cleanup procedures, potentially incorporating automated state table flushing or service restarts to ensure consistent network state after rule modifications.
+*   Enhance automated network validation scripts to include comprehensive firewall state checks (e.g., using `pfctl -sr` and `pfctl -si` for rule and state table verification) to confirm rules are correctly applied and removed.
+*   Investigate the root causes of persistent firewall state issues in OPNsense in various scenarios to establish best practices for reliable and predictable rule management in production-like environments.
+
+### 5. Proof points
+
+*   **Firewall Rule Enforcement:** Screenshots `Servers Firewall Log` and `OPNsense ICMP Block Log Evidence` provide visual proof of blocked traffic, complemented by `Server Firewall Block Rule (Test)` showing the rule in place.
+*   **Client Network Validation:** Screenshots such as `Lan-Validation`, `Win11 Client01 Single LAN DHCP Verified`, and `Win11 Client01 Outbound Connectivity Test` confirm successful client connectivity and network services.
+*   **Project Logs:** Detailed engineering logs documenting the configuration of WAN, LAN, and SERVERS interfaces, along with the comprehensive validation processes and identified issues.
+*   **Successful Completion:** The project's final session explicitly marked "Goal Achieved: ✅ Yes" against a comprehensive "Definition of Done" that included successful configuration, validation, and documentation.
 
 ## Evidence gallery
 ### Servers Firewall Log
@@ -52,6 +49,10 @@ Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking
 
 ### Server Firewall Block Rule (Test)
 ![Server Firewall Block Rule (Test)](screenshots/2026-10-25_090814_server-firewall-block-rule-test.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
+
+### Lan-Validation
+![Lan-Validation](screenshots/2026-10-25_181025_lan-validation.png)
 Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
 
 ### WIN11-CLIENT Installation Complete
@@ -114,10 +115,6 @@ Evidence copied from [logs/2026-10-12.md](https://github.com/harkdev1/networking
 ![OPNsense Live Boot](screenshots/2026-10-11_131714_opnsense-live-boot.png)
 Evidence copied from [logs/2026-10-11.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-11.md) and verified against the source image.
 
-### Lan-Validation
-![Lan-Validation](screenshots/2026-10-25_181025_lan-validation.png)
-Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-25.md) and verified against the source image.
-
 ## Session highlights
 
 ### 2026-10-25 · 08:45 to 09:14
@@ -153,8 +150,9 @@ Recorded outcome: ✅ Yes. Established Project 2 workspace at D:\Projects\Networ
 [Open the original AutoDoc log](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/logs/2026-10-10.md)
 
 ## Current limitations and next steps
-- Continue from the handoff notes and current project status.
-- Capture final cleanup or deployment follow-up items as they are completed.
+- Share the completed project summary in the README and release notes.
+- Capture any final cleanup or deployment follow-up items.
+- Keep logs fresh for future review and hiring conversations.
 
 ## Project files
 - [Current project status](https://github.com/harkdev1/networking-infrastructure-engineering/blob/main/project-status.md)

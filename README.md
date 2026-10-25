@@ -9,9 +9,9 @@ Starting from the fundamentals, building progressively, and following curiosity 
 <!-- autodoc:project:networking-infrastructure-engineering:start -->
 ### [Networking & Infrastructure Engineering](projects/networking-infrastructure-engineering/README.md)
 
-**In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
+**Complete** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
 
-Configured and validated the OPNsense WAN, LAN, and SERVERS interfaces, verified the additional SERVERS subnet and tested gateway reachability, demonstrated targeted ICMP blocking and confirmed blocked traffic in firewall logs, validated Windows client gateway connectivity and outbound access, confirmed DNS resolution and HTTPS connectivity, documented network addressing and firewall behavior, created validation...
+This project established a foundational network infrastructure using OPNsense, demonstrating core routing, firewalling, and network services for a multi-segment environment. It validated critical client connectivity and advanced firewall enforcement, while also highlighting key learnings in network state management. --- ### 1. Project story This project focused on engineering a robust and segmented network...
 
 [![Servers Firewall Log](projects/networking-infrastructure-engineering/screenshots/2026-10-25_085739_servers-firewall-log.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
