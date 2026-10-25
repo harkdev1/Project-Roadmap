@@ -14,29 +14,34 @@ The latest recorded test found that the configured Security log did not reliably
 **Source repository:** [https://github.com/harkdev1/CyberOps-Sandbox](https://github.com/harkdev1/CyberOps-Sandbox)
 
 ## What I built
-Verified NS-DC01 configuration, confirmed Windows Server 2025 with AD DS and DNS, documented the northstar.local domain and network settings, confirmed VMware NAT mode, identified reusable Project 1 administration and PowerShell capabilities, reviewed Project 2 scope.
+Reviewed the existing OPNsense WAN, LAN, and SERVERS network baseline, verified WIN11-CLIENT01 network identity and connectivity configuration, confirmed endpoint IPv4 address 192.168.20.165 with gateway 192.168.20.1, checked for Wazuh and Sysmon services with neither returned by the initial checks, verified Windows Security logging is enabled with 29,072 records, verified System logging is enabled with 1,792 records, verified PowerShell Operational logging is enabled with 483 records, established that elevated PowerShell is required to inspect the Security log, made no system or network configuration changes.
 
 Summary:
-Current efforts focused on establishing a verified baseline configuration for NS-DC01, documenting its existing state, and identifying reusable administrative assets from Project 1. This foundational work is crucial for preparing the environment for Project 2, with a strong emphasis on preserving current capabilities and avoiding premature changes.
+Initial validation of the existing lab infrastructure was performed to establish an evidence-based starting point for the November CyberOps SIEM and detection engineering work. This involved reviewing network baselines, verifying endpoint network identity and connectivity, and confirming the status of core Windows event logging sources on a target workstation. A key finding was the absence of dedicated endpoint telemetry agents, identifying telemetry collection as the next critical technical milestone. No system or network configuration changes were made, preserving the existing infrastructure.
 
 Tasks Completed:
-*   Verified and documented the configuration of NS-DC01, confirming it runs Windows Server 2025.
-*   Confirmed the presence and configuration of Active Directory Domain Services (AD DS) and DNS roles on NS-DC01.
-*   Documented the `northstar.local` domain and its associated network settings.
-*   Confirmed VMware NAT network mode is in use for the environment.
-*   Identified existing Project 1 administration and PowerShell capabilities with potential for reuse in future projects.
-*   Reviewed the high-level scope and requirements for Project 2.
+*   Reviewed the existing OPNsense WAN, LAN, and SERVERS network baseline.
+*   Verified WIN11-CLIENT01 network identity and connectivity configuration.
+*   Confirmed WIN11-CLIENT01 endpoint IPv4 address (192.168.20.165) with gateway (192.168.20.1).
+*   Checked for existing Wazuh and Sysmon service installations on the endpoint; neither were found.
+*   Verified Windows Security logging is enabled (29,072 records observed).
+*   Verified Windows System logging is enabled (1,792 records observed).
+*   Verified Windows PowerShell Operational logging is enabled (483 records observed).
+*   Established that elevated PowerShell privileges are required for inspecting the Security log.
+*   Made no system or network configuration changes to the existing environment.
 
 Issues Encountered:
-None
+*   Initial attempts to inspect the Windows Security log via PowerShell failed due to insufficient privileges, necessitating elevation.
+*   The endpoint's operating system identification differed from the expected Windows 11 designation.
+*   Available host memory is constrained while the existing virtual machines are running, potentially impacting future resource allocation for SIEM components.
 
 Next Steps:
-*   Continue analysis of Project 2 requirements against the established baseline to identify integration points and potential impact.
-*   Further evaluate the identified reusable Project 1 administrative and PowerShell capabilities for direct application or adaptation in Project 2.
-*   Develop a preliminary design or plan for Project 2 that leverages the existing environment without introducing breaking changes.
+*   Deploy and configure endpoint telemetry agents (e.g., Wazuh, Sysmon) on WIN11-CLIENT01.
+*   Further investigate the discrepancy in the endpoint's reported operating system identification.
+*   Address host memory constraints to ensure adequate resources for upcoming SIEM and detection engineering tools.
 
 Notes:
-The primary focus of this phase was to meticulously document and understand the current state of the environment, particularly NS-DC01, without making any modifications. This ensures a stable baseline is established before initiating Project 2 activities. A key guiding principle is to preserve existing capabilities and assets from Project 1 wherever possible, streamlining future efforts. This preparatory work is essential for a smooth transition into Project 2 planning and implementation.
+This initial validation effort successfully confirmed the foundational status of the lab environment prior to new deployments. The existing infrastructure, including network configuration, was preserved without modification. Confirmation of active Windows event sources provides a baseline for initial detection capabilities, pending the deployment of advanced telemetry agents.
 
 ## Evidence gallery
 ### Telemetry Visibility Gap
@@ -55,7 +60,19 @@ Evidence copied from [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-S
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
 Evidence copied from [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md) and verified against the source image.
 
+### Endpoint Baseline Initial Audit
+![Endpoint Baseline Initial Audit](screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
+
+### Security Log Baseline
+![Security Log Baseline](screenshots/2026-10-25_184616_security-log-baseline.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-10-25 · 18:32 to 18:48
+Recorded outcome: ✅ Yes. Initial validation of the existing lab infrastructure was performed to establish an evidence-based starting point for the November CyberOps SIEM and detection engineering work. This involved reviewing network baselines, verifying endpoint network identity and connectivity, and confirming the status of core Windows event logging sources on a target workstation. A key finding was the absence of dedicated endpoint telemetry agents, identifying telemetry collection as the next critical technical milestone. No system or network configuration changes were made, preserving the existing infrastructure.
+[Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md)
 
 ### 2026-10-11 · 10:55 to 11:07
 Recorded outcome: ✅ Yes. Current efforts focused on establishing a verified baseline configuration for NS-DC01, documenting its existing state, and identifying reusable administrative assets from Project 1. This foundational work is crucial for preparing the environment for Project 2, with a strong emphasis on preserving current capabilities and avoiding premature changes.
