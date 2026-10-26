@@ -14,36 +14,39 @@ The latest recorded test found that the configured Security log did not reliably
 **Source repository:** [https://github.com/harkdev1/CyberOps-Sandbox](https://github.com/harkdev1/CyberOps-Sandbox)
 
 ## What I built
-Reviewed the existing OPNsense WAN, LAN, and SERVERS network baseline, verified WIN11-CLIENT01 network identity and connectivity configuration, confirmed endpoint IPv4 address 192.168.20.165 with gateway 192.168.20.1, checked for Wazuh and Sysmon services with neither returned by the initial checks, verified Windows Security logging is enabled with 29,072 records, verified System logging is enabled with 1,792 records, verified PowerShell Operational logging is enabled with 483 records, established that elevated PowerShell is required to inspect the Security log, made no system or network configuration changes.
+Reviewed the existing OPNsense virtual firewall and segmented network infrastructure, confirmed Windows endpoint and event-log baseline checks had been completed, established the remaining Month 1 foundation tasks, planned Ubuntu Server deployment and Wazuh installation, defined the first Month 2 milestone as collecting and investigating genuine Windows endpoint telemetry.
 
 Summary:
-Initial validation of the existing lab infrastructure was performed to establish an evidence-based starting point for the November CyberOps SIEM and detection engineering work. This involved reviewing network baselines, verifying endpoint network identity and connectivity, and confirming the status of core Windows event logging sources on a target workstation. A key finding was the absence of dedicated endpoint telemetry agents, identifying telemetry collection as the next critical technical milestone. No system or network configuration changes were made, preserving the existing infrastructure.
+Significant progress was made in establishing foundational infrastructure and planning for the development of security operations capabilities. Key activities included reviewing existing network infrastructure, confirming baseline checks, establishing remaining Month 1 tasks, and planning for Wazuh deployment. The primary constraint identified is limited host memory, which requires further evaluation before proceeding with new installations.
 
 Tasks Completed:
-*   Reviewed the existing OPNsense WAN, LAN, and SERVERS network baseline.
-*   Verified WIN11-CLIENT01 network identity and connectivity configuration.
-*   Confirmed WIN11-CLIENT01 endpoint IPv4 address (192.168.20.165) with gateway (192.168.20.1).
-*   Checked for existing Wazuh and Sysmon service installations on the endpoint; neither were found.
-*   Verified Windows Security logging is enabled (29,072 records observed).
-*   Verified Windows System logging is enabled (1,792 records observed).
-*   Verified Windows PowerShell Operational logging is enabled (483 records observed).
-*   Established that elevated PowerShell privileges are required for inspecting the Security log.
-*   Made no system or network configuration changes to the existing environment.
+*   Reviewed the existing OPNsense virtual firewall and segmented network infrastructure.
+*   Confirmed completion of Windows endpoint and event-log baseline checks.
+*   Established the remaining Month 1 foundation tasks.
+*   Planned Ubuntu Server deployment and Wazuh installation.
+*   Defined the first Month 2 milestone: collecting and investigating genuine Windows endpoint telemetry.
 
 Issues Encountered:
-*   Initial attempts to inspect the Windows Security log via PowerShell failed due to insufficient privileges, necessitating elevation.
-*   The endpoint's operating system identification differed from the expected Windows 11 designation.
-*   Available host memory is constrained while the existing virtual machines are running, potentially impacting future resource allocation for SIEM components.
+*   Available host memory is a significant deployment constraint. A previous check indicated approximately 4.9 GB available while lab VMs were running, which necessitates a thorough evaluation of Wazuh resource allocation prior to installation to ensure stable operation.
 
 Next Steps:
-*   Deploy and configure endpoint telemetry agents (e.g., Wazuh, Sysmon) on WIN11-CLIENT01.
-*   Further investigate the discrepancy in the endpoint's reported operating system identification.
-*   Address host memory constraints to ensure adequate resources for upcoming SIEM and detection engineering tools.
+*   Evaluate Wazuh resource requirements and optimize host memory allocation.
+*   Proceed with Ubuntu Server deployment.
+*   Install and configure Wazuh.
+*   Begin collecting and investigating genuine Windows endpoint telemetry to meet the Month 2 milestone.
 
 Notes:
-This initial validation effort successfully confirmed the foundational status of the lab environment prior to new deployments. The existing infrastructure, including network configuration, was preserved without modification. Confirmation of active Windows event sources provides a baseline for initial detection capabilities, pending the deployment of advanced telemetry agents.
+The project is transitioning from building and validating foundational infrastructure to developing practical security operations capabilities. There is a strong emphasis on leveraging real telemetry for evidence-based investigations within a reproducible environment.
 
 ## Evidence gallery
+### Endpoint Baseline Initial Audit
+![Endpoint Baseline Initial Audit](screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
+
+### Security Log Baseline
+![Security Log Baseline](screenshots/2026-10-25_184616_security-log-baseline.png)
+Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
+
 ### Telemetry Visibility Gap
 ![Telemetry Visibility Gap](screenshots/2026-10-08_053048_telemetry-visibility-gap.png)
 Evidence copied from [logs/2026-10-08.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-08.md) and verified against the source image.
@@ -60,15 +63,11 @@ Evidence copied from [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-S
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
 Evidence copied from [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md) and verified against the source image.
 
-### Endpoint Baseline Initial Audit
-![Endpoint Baseline Initial Audit](screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)
-Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
-
-### Security Log Baseline
-![Security Log Baseline](screenshots/2026-10-25_184616_security-log-baseline.png)
-Evidence copied from [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md) and verified against the source image.
-
 ## Session highlights
+
+### 2026-10-26 · 05:52 to 06:38
+Recorded outcome: ✅ Yes. Significant progress was made in establishing foundational infrastructure and planning for the development of security operations capabilities. Key activities included reviewing existing network infrastructure, confirming baseline checks, establishing remaining Month 1 tasks, and planning for Wazuh deployment. The primary constraint identified is limited host memory, which requires further evaluation before proceeding with new installations.
+[Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-26.md)
 
 ### 2026-10-25 · 18:32 to 18:48
 Recorded outcome: ✅ Yes. Initial validation of the existing lab infrastructure was performed to establish an evidence-based starting point for the November CyberOps SIEM and detection engineering work. This involved reviewing network baselines, verifying endpoint network identity and connectivity, and confirming the status of core Windows event logging sources on a target workstation. A key finding was the absence of dedicated endpoint telemetry agents, identifying telemetry collection as the next critical technical milestone. No system or network configuration changes were made, preserving the existing infrastructure.

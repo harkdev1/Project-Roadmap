@@ -29,9 +29,9 @@ Created the Networking & Infrastructure Engineering project workspace, initializ
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Reviewed the existing OPNsense WAN, LAN, and SERVERS network baseline, verified WIN11-CLIENT01 network identity and connectivity configuration, confirmed endpoint IPv4 address 192.168.20.165 with gateway 192.168.20.1, checked for Wazuh and Sysmon services with neither returned by the initial checks, verified Windows Security logging is enabled with 29,072 records, verified System logging is enabled with 1,792...
+Reviewed the existing OPNsense virtual firewall and segmented network infrastructure, confirmed Windows endpoint and event-log baseline checks had been completed, established the remaining Month 1 foundation tasks, planned Ubuntu Server deployment and Wazuh installation, defined the first Month 2 milestone as collecting and investigating genuine Windows endpoint telemetry. Summary: Significant progress was made...
 
-[![Telemetry Visibility Gap](projects/cyberops-sandbox/screenshots/2026-10-08_053048_telemetry-visibility-gap.png)](projects/cyberops-sandbox/README.md)
+[![Endpoint Baseline Initial Audit](projects/cyberops-sandbox/screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->
