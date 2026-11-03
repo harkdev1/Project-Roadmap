@@ -14,29 +14,35 @@ The latest recorded test found that the configured Security log did not reliably
 **Source repository:** [https://github.com/harkdev1/CyberOps-Sandbox](https://github.com/harkdev1/CyberOps-Sandbox)
 
 ## What I built
-Reviewed the existing OPNsense virtual firewall and segmented network infrastructure, confirmed Windows endpoint and event-log baseline checks had been completed, established the remaining Month 1 foundation tasks, planned Ubuntu Server deployment and Wazuh installation, defined the first Month 2 milestone as collecting and investigating genuine Windows endpoint telemetry.
+Created a dedicated Ubuntu Server 26.04.1 LTS virtual machine in VMware, configured 2 CPU cores and 4 GB RAM with a 50 GB virtual disk, connected the VM to the existing OPNsense LAN through VMnet2, completed Ubuntu installation and account recovery, updated system packages, verified hostname and network configuration, confirmed gateway connectivity and external internet access, verified DNS resolution, enabled OpenSSH Server, established successful remote SSH access from the physical Windows host.
 
 Summary:
-Significant progress was made in establishing foundational infrastructure and planning for the development of security operations capabilities. Key activities included reviewing existing network infrastructure, confirming baseline checks, establishing remaining Month 1 tasks, and planning for Wazuh deployment. The primary constraint identified is limited host memory, which requires further evaluation before proceeding with new installations.
+A dedicated Ubuntu Server 26.04.1 LTS virtual machine has been successfully provisioned in VMware, establishing a foundational Linux server for centralized security monitoring. The VM was integrated into the existing segmented OPNsense LAN, with core system configuration, network validation, and remote administration capabilities established. This prepares the environment for future Wazuh deployment without requiring a rebuild of existing infrastructure.
 
 Tasks Completed:
-*   Reviewed the existing OPNsense virtual firewall and segmented network infrastructure.
-*   Confirmed completion of Windows endpoint and event-log baseline checks.
-*   Established the remaining Month 1 foundation tasks.
-*   Planned Ubuntu Server deployment and Wazuh installation.
-*   Defined the first Month 2 milestone: collecting and investigating genuine Windows endpoint telemetry.
+*   Provisioned a dedicated Ubuntu Server 26.04.1 LTS virtual machine in VMware.
+*   Configured the VM with 2 CPU cores, 4 GB RAM, and a 50 GB virtual disk.
+*   Integrated the VM into the existing OPNsense LAN via VMnet2.
+*   Completed the Ubuntu installation process.
+*   Successfully performed an account recovery and password reset.
+*   Updated all system packages to the latest versions.
+*   Verified hostname and network configuration (IP address, subnet mask).
+*   Confirmed gateway connectivity and external internet access.
+*   Validated DNS resolution.
+*   Enabled the OpenSSH Server.
+*   Established successful remote SSH access from the physical Windows host.
 
 Issues Encountered:
-*   Available host memory is a significant deployment constraint. A previous check indicated approximately 4.9 GB available while lab VMs were running, which necessitates a thorough evaluation of Wazuh resource allocation prior to installation to ensure stable operation.
+*   Initial Ubuntu login failed due to an incorrect or forgotten password, necessitating entry into recovery mode to identify the existing account and perform a password reset.
+*   Conservative VM memory allocation was required due to initial host resource availability constraints.
 
 Next Steps:
-*   Evaluate Wazuh resource requirements and optimize host memory allocation.
-*   Proceed with Ubuntu Server deployment.
-*   Install and configure Wazuh.
-*   Begin collecting and investigating genuine Windows endpoint telemetry to meet the Month 2 milestone.
+*   Proceed with the installation and configuration of Wazuh on the newly provisioned Ubuntu server.
+*   Review host resource availability to potentially increase VM memory allocation if performance bottlenecks are observed or future requirements demand it.
 
 Notes:
-The project is transitioning from building and validating foundational infrastructure to developing practical security operations capabilities. There is a strong emphasis on leveraging real telemetry for evidence-based investigations within a reproducible environment.
+*   The current VM memory allocation of 4 GB is functional but was influenced by host resource limitations. Performance should be monitored during Wazuh deployment and operation, and memory adjusted as needed to ensure optimal security monitoring performance.
+*   The successful integration into the OPNsense LAN through VMnet2 ensures proper network segmentation and controlled communication for the security monitoring solution.
 
 ## Evidence gallery
 ### Endpoint Baseline Initial Audit
@@ -63,7 +69,27 @@ Evidence copied from [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-S
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
 Evidence copied from [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md) and verified against the source image.
 
+### Ubuntu Storage Configuration
+![Ubuntu Storage Configuration](screenshots/2026-11-03_061020_ubuntu-storage-configuration.png)
+Evidence copied from [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md) and verified against the source image.
+
+### Ubuntu Username Recovery after forgetting
+![Ubuntu Username Recovery after forgetting](screenshots/2026-11-03_062246_ubuntu-username-recovery-after-forgetting.png)
+Evidence copied from [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md) and verified against the source image.
+
+### Ubuntu Server First Login
+![Ubuntu Server First Login](screenshots/2026-11-03_062700_ubuntu-server-first-login.png)
+Evidence copied from [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md) and verified against the source image.
+
+### Ubuntu SSH Service Running
+![Ubuntu SSH Service Running](screenshots/2026-11-03_063209_ubuntu-ssh-service-running.png)
+Evidence copied from [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-11-03 · 05:57 to 06:34
+Recorded outcome: ✅ Yes. A dedicated Ubuntu Server 26.04.1 LTS virtual machine has been successfully provisioned in VMware, establishing a foundational Linux server for centralized security monitoring. The VM was integrated into the existing segmented OPNsense LAN, with core system configuration, network validation, and remote administration capabilities established. This prepares the environment for future Wazuh deployment without requiring a rebuild of existing infrastructure.
+[Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md)
 
 ### 2026-10-26 · 05:52 to 06:38
 Recorded outcome: ✅ Yes. Significant progress was made in establishing foundational infrastructure and planning for the development of security operations capabilities. Key activities included reviewing existing network infrastructure, confirming baseline checks, establishing remaining Month 1 tasks, and planning for Wazuh deployment. The primary constraint identified is limited host memory, which requires further evaluation before proceeding with new installations.

@@ -29,7 +29,7 @@ Created the Networking & Infrastructure Engineering project workspace, initializ
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Reviewed the existing OPNsense virtual firewall and segmented network infrastructure, confirmed Windows endpoint and event-log baseline checks had been completed, established the remaining Month 1 foundation tasks, planned Ubuntu Server deployment and Wazuh installation, defined the first Month 2 milestone as collecting and investigating genuine Windows endpoint telemetry. Summary: Significant progress was made...
+Created a dedicated Ubuntu Server 26.04.1 LTS virtual machine in VMware, configured 2 CPU cores and 4 GB RAM with a 50 GB virtual disk, connected the VM to the existing OPNsense LAN through VMnet2, completed Ubuntu installation and account recovery, updated system packages, verified hostname and network configuration, confirmed gateway connectivity and external internet access, verified DNS resolution, enabled...
 
 [![Endpoint Baseline Initial Audit](projects/cyberops-sandbox/screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
