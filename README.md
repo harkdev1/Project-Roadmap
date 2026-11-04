@@ -29,9 +29,9 @@ Created the Networking & Infrastructure Engineering project workspace, initializ
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Created a dedicated Ubuntu Server 26.04.1 LTS virtual machine in VMware, configured 2 CPU cores and 4 GB RAM with a 50 GB virtual disk, connected the VM to the existing OPNsense LAN through VMnet2, completed Ubuntu installation and account recovery, updated system packages, verified hostname and network configuration, confirmed gateway connectivity and external internet access, verified DNS resolution, enabled...
+Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement. Summary: Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the...
 
-[![Endpoint Baseline Initial Audit](projects/cyberops-sandbox/screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)](projects/cyberops-sandbox/README.md)
+[![Ubuntu Storage Configuration](projects/cyberops-sandbox/screenshots/2026-11-03_061020_ubuntu-storage-configuration.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->
