@@ -17,4 +17,27 @@ This index separates what the existing evidence demonstrates from what remains u
 
 ## Transferred screenshots
 
+
+<!-- autodoc:evidence-gallery:start -->
+### Northstar Workstation Policy Configured
+![Northstar Workstation Policy Configured](screenshots/2026-10-10_094549_northstar-workstation-policy-configured.png)
+The source log labels this capture “Northstar Workstation Policy Configured.”
+Source: [logs/2026-10-10.md](https://github.com/harkdev1/Windows-Helpdesk-Lab/blob/main/logs/2026-10-10.md). Image copied from the log reference and SHA-256 verified.
+
+### Final DNS health check
+![Final DNS health check](screenshots/2026-10-10_131812_final-dns-health-check.png)
+The source log labels this capture “Final DNS health check.”
+Source: [logs/2026-10-10.md](https://github.com/harkdev1/Windows-Helpdesk-Lab/blob/main/logs/2026-10-10.md). Image copied from the log reference and SHA-256 verified.
+
+### Northstar Solutions Active Directory domain controller verified
+![Northstar Solutions Active Directory domain controller verified](screenshots/2026-09-28_164213_northstar-solutions-active-directory-domain-cont.png)
+The source log labels this capture “Northstar Solutions Active Directory domain controller verified.”
+Source: [logs/2026-09-28.md](https://github.com/harkdev1/Windows-Helpdesk-Lab/blob/main/logs/2026-09-28.md). Image copied from the log reference and SHA-256 verified.
+
+### Northstar Solutions Group Policy environment
+![Northstar Solutions Group Policy environment](screenshots/2026-09-28_164430_northstar-solutions-group-policy-environment.png)
+The source log labels this capture “Northstar Solutions Group Policy environment.”
+Source: [logs/2026-09-28.md](https://github.com/harkdev1/Windows-Helpdesk-Lab/blob/main/logs/2026-09-28.md). Image copied from the log reference and SHA-256 verified.
+<!-- autodoc:evidence-gallery:end -->
+
 AutoDoc refreshes this section from image links in the source logs. Each image is copied into this Roadmap folder and checked against the source bytes before it is committed.

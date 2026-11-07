@@ -37,11 +37,11 @@ Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wa
 <!-- autodoc:project:windows-helpdesk-lab:start -->
 ### [Windows Helpdesk Lab](projects/windows-helpdesk-lab/README.md)
 
-**Complete · v1.0** · [Source repository](https://github.com/harkdev1/Windows-Helpdesk-Lab)
+**Complete ? v1.0** · [Source repository](https://github.com/harkdev1/Windows-Helpdesk-Lab)
 
-The Northstar Windows domain lab documents its AD/DNS foundation, administration checks, reusable PowerShell diagnostics, and configured workstation policy. Client-side policy application remains unverified.
+A small-business-style Windows domain lab using the Northstar environment. The completed foundation covers NS-DC01, Active Directory and DNS, directory/group checks, and reusable PowerShell diagnostics. The Northstar Workstation Policy is configured and linked, but its application to a domain-joined workstation is unverified. Account access, DNS/connectivity, and policy-behavior ticket exercises remain proposed...
 
-**[Open the Helpdesk gallery](projects/windows-helpdesk-lab/README.md)**. AutoDoc will add approved screenshots and session highlights after the next successful finish or project-completion sync.
+[![Northstar Workstation Policy Configured](projects/windows-helpdesk-lab/screenshots/2026-10-10_094549_northstar-workstation-policy-configured.png)](projects/windows-helpdesk-lab/README.md)
 <!-- autodoc:project:windows-helpdesk-lab:end -->
 
 ## How the gallery updates
