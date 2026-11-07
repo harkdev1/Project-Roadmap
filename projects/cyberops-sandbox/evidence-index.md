@@ -21,52 +21,52 @@ The screenshots displayed here are copied from image references in the original 
 <!-- autodoc:evidence-gallery:start -->
 ### Ubuntu Storage Configuration
 ![Ubuntu Storage Configuration](screenshots/2026-11-03_061020_ubuntu-storage-configuration.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Ubuntu Storage Configuration.”
 Source: [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md). Image copied from the log reference and SHA-256 verified.
 
 ### Ubuntu Username Recovery after forgetting
 ![Ubuntu Username Recovery after forgetting](screenshots/2026-11-03_062246_ubuntu-username-recovery-after-forgetting.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Ubuntu Username Recovery after forgetting.”
 Source: [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md). Image copied from the log reference and SHA-256 verified.
 
 ### Ubuntu Server First Login
 ![Ubuntu Server First Login](screenshots/2026-11-03_062700_ubuntu-server-first-login.png)
-This screenshot shows the current configuration or system state being reviewed as part of the active project setup, validation, or troubleshooting work. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Ubuntu Server First Login.”
 Source: [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md). Image copied from the log reference and SHA-256 verified.
 
 ### Ubuntu SSH Service Running
 ![Ubuntu SSH Service Running](screenshots/2026-11-03_063209_ubuntu-ssh-service-running.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Ubuntu SSH Service Running.”
 Source: [logs/2026-11-03.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-03.md). Image copied from the log reference and SHA-256 verified.
 
 ### Endpoint Baseline Initial Audit
 ![Endpoint Baseline Initial Audit](screenshots/2026-10-25_184357_endpoint-baseline-initial-audit.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Endpoint Baseline Initial Audit.”
 Source: [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
 
 ### Security Log Baseline
 ![Security Log Baseline](screenshots/2026-10-25_184616_security-log-baseline.png)
-This screenshot shows the telemetry or evidence being reviewed to understand the current system behavior and validate what the environment is actually recording. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Security Log Baseline.”
 Source: [logs/2026-10-25.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-25.md). Image copied from the log reference and SHA-256 verified.
 
 ### Telemetry Visibility Gap
 ![Telemetry Visibility Gap](screenshots/2026-10-08_053048_telemetry-visibility-gap.png)
-This screenshot shows the telemetry or evidence being reviewed to understand the current system behavior and validate what the environment is actually recording. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Telemetry Visibility Gap.”
 Source: [logs/2026-10-08.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-08.md). Image copied from the log reference and SHA-256 verified.
 
 ### Process Creation Telemetry
 ![Process Creation Telemetry](screenshots/2026-10-07_052909_process-creation-telemetry.png)
-This screenshot shows the telemetry or evidence being reviewed to understand the current system behavior and validate what the environment is actually recording. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Process Creation Telemetry.”
 Source: [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-07.md). Image copied from the log reference and SHA-256 verified.
 
 ### Security Event Distribution
 ![Security Event Distribution](screenshots/2026-10-07_053206_security-event-distribution.png)
-This screenshot shows the telemetry or evidence being reviewed to understand the current system behavior and validate what the environment is actually recording. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “Security Event Distribution.”
 Source: [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-10-07.md). Image copied from the log reference and SHA-256 verified.
 
 ### CyberOps Baseline v0.1
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
-This screenshot captures the most important project evidence for the current phase, showing the main state, artifact, or operational view being reviewed. It highlights the key detail the viewer should notice in this stage of the project.
+The source log labels this capture “CyberOps Baseline v0.1.”
 Source: [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->
 

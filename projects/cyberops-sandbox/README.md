@@ -16,20 +16,6 @@ The latest recorded test found that the configured Security log did not reliably
 ## What I built
 Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement.
 
-Summary:
-Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement.
-
-Tasks Completed:
-Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement.
-
-Issues Encountered:
-The initial Ubuntu version selection introduced an avoidable compatibility detour, distinguishing between the ISO attached to the VM and the operating system actually booted, confirming the appropriate Wazuh installation path.
-
-Next Steps:
-Need to finish Ubuntu 26.04.5 LTS iso swap to finish Wazuh installation
-
-Notes:
-
 ## Evidence gallery
 ### Ubuntu Storage Configuration
 ![Ubuntu Storage Configuration](screenshots/2026-11-03_061020_ubuntu-storage-configuration.png)
@@ -106,8 +92,7 @@ Recorded outcome: ✅ Yes. Initial project baselining activities have been compl
 [Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md)
 
 ## Current limitations and next steps
-- Continue from the handoff notes and current project status.
-- Capture final cleanup or deployment follow-up items as they are completed.
+Ubuntu Server 24.04.5 ISO selected and attached for reinstallation. Final boot/install confirmation and OS compatibility validation remain outstanding. Wazuh repository and packages have not yet been installed.
 
 ## Project files
 - [Current project status](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/project-status.md)
