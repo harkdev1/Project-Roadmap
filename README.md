@@ -9,20 +9,12 @@ Starting from the fundamentals, building progressively, and following curiosity 
 <!-- autodoc:project:networking-infrastructure-engineering:start -->
 ### [Networking & Infrastructure Engineering](projects/networking-infrastructure-engineering/README.md)
 
-**Complete** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
+**Archived in CyberOps** · [CyberOps archive](https://github.com/harkdev1/CyberOps-Sandbox/tree/main/projects/networking-infrastructure-engineering)
 
 This project established a foundational network infrastructure using OPNsense, demonstrating core routing, firewalling, and network services for a multi-segment environment. It validated critical client connectivity and advanced firewall enforcement, while also highlighting key learnings in network state management. --- ### 1. Project story This project focused on engineering a robust and segmented network...
 
 [![Servers Firewall Log](projects/networking-infrastructure-engineering/screenshots/2026-10-25_085739_servers-firewall-log.png)](projects/networking-infrastructure-engineering/README.md)
 <!-- autodoc:project:networking-infrastructure-engineering:end -->
-
-<!-- autodoc:project:project:start -->
-### [Project](projects/project/README.md)
-
-**In progress** · [Source repository](https://github.com/harkdev1/networking-infrastructure-engineering)
-
-Created the Networking & Infrastructure Engineering project workspace, initialized AutoDoc, installed GitHub CLI and authenticated with GitHub, created the public networking-infrastructure-engineering repository, configured the origin remote and main branch, pushed the initial AutoDoc project structure, enabled automatic synchronization, generated the first engineering log and committed the initial documentation...
-<!-- autodoc:project:project:end -->
 
 <!-- autodoc:project:cyberops-sandbox:start -->
 ### [CyberOps Sandbox](projects/cyberops-sandbox/README.md)
