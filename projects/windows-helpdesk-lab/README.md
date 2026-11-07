@@ -10,7 +10,7 @@ The Northstar Workstation Policy is configured and linked, but its application t
 
 
 <!-- autodoc:project-showcase:start -->
-**Status:** Complete · v1.0
+**Status:** Complete (v1.0)
 **Source repository:** [https://github.com/harkdev1/Windows-Helpdesk-Lab](https://github.com/harkdev1/Windows-Helpdesk-Lab)
 
 ## What I built
