@@ -14,7 +14,42 @@ The latest recorded test found that the configured Security log did not reliably
 **Source repository:** [https://github.com/harkdev1/CyberOps-Sandbox](https://github.com/harkdev1/CyberOps-Sandbox)
 
 ## What I built
-Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement.
+Ubuntu Server 24.04.5 LTS reinstallation, VMware boot configuration, Ubuntu package updates, LVM root filesystem expansion, OpenSSH installation and configuration, remote SSH validation, Wazuh indexer deployment, Wazuh manager deployment, Wazuh dashboard deployment, service health verification, dashboard accessibility validation.
+
+**Summary:**
+This documentation details the process of re-establishing a compatible Ubuntu server environment within VMware, configuring secure remote administration, and deploying a functional Wazuh Security Information and Event Management (SIEM) stack. The initiative focused on rebuilding the infrastructure while preserving existing VMware hardware configurations, addressing initial operating system compatibility issues, overcoming critical resource constraints, and ensuring the accessibility and health of the deployed security monitoring services.
+
+**Tasks Completed:**
+*   Reinstallation of Ubuntu Server 24.04.5 LTS.
+*   Configuration of VMware boot settings to ensure proper virtual disk boot.
+*   Execution of comprehensive Ubuntu package updates.
+*   Expansion of the LVM root filesystem to accommodate application requirements.
+*   Installation and configuration of OpenSSH for secure remote access.
+*   Validation of remote SSH connectivity.
+*   Deployment of the Wazuh Indexer component.
+*   Deployment of the Wazuh Manager component.
+*   Deployment of the Wazuh Dashboard component.
+*   Verification of all deployed Wazuh service health.
+*   Validation of Wazuh Dashboard accessibility.
+
+**Issues Encountered:**
+*   Initial attempt to use Ubuntu 26.04 resulted in compatibility issues, necessitating a rollback to 24.04.5 LTS.
+*   Difficulty ensuring the virtual machine booted from the existing virtual disk rather than the replacement ISO after OS reinstallation.
+*   An unexpected full operating system reinstallation was required due to prior issues, consuming additional time.
+*   The OpenSSH server package was initially missing, leading to failed SSH connection attempts.
+*   Stale SSH host identification entries caused connection warnings and required manual client-side cleanup.
+*   Physical Windows host storage exhaustion occurred during the Wazuh installation, interrupting the deployment process.
+*   Recovery and continuation of the interrupted Wazuh installation required additional troubleshooting and resource management.
+
+**Next Steps:**
+No explicit next steps were provided in the rough notes.
+
+**Notes:**
+*   Initial OS compatibility guidance obtained via AI was not sufficiently validated, leading to a need for OS reinstallation. This highlights the importance of independent verification of critical infrastructure compatibility.
+*   The VMware ISO boot configuration required more intensive troubleshooting than anticipated, indicating a need for clearer instructions or pre-validation in future similar tasks.
+*   The initial SSH service check assumed OpenSSH was installed, which was incorrect. Future diagnostic steps should explicitly confirm package installation before checking service status.
+*   A typo in a package inspection command led to wasted diagnostic time. Emphasize careful command entry and validation.
+*   A critical oversight was not checking the host disk capacity *before* beginning the Wazuh deployment, directly leading to installation interruption and recovery efforts. Future deployments must include thorough pre-flight checks of all system resources.
 
 ## Evidence gallery
 ### Ubuntu Storage Configuration
@@ -57,7 +92,19 @@ Evidence copied from [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-S
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
 Evidence copied from [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md) and verified against the source image.
 
+### Wazuh Services Operational
+![Wazuh Services Operational](screenshots/2026-11-16_075712_wazuh-services-operational.png)
+Evidence copied from [logs/2026-11-16.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-16.md) and verified against the source image.
+
+### Wazuh Dashboard Accessible
+![Wazuh Dashboard Accessible](screenshots/2026-11-16_075920_wazuh-dashboard-accessible.png)
+Evidence copied from [logs/2026-11-16.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-16.md) and verified against the source image.
+
 ## Session highlights
+
+### 2026-11-16 · 07:12 to 08:01
+Recorded outcome: ✅ Yes. Establishing a compatible SIEM server environment, rebuilding the Ubuntu infrastructure while preserving VMware hardware configuration, configuring secure remote administration, deploying and recovering a centralized security monitoring stack, validating service health and dashboard accessibility, overcoming infrastructure resource constraints.
+[Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-16.md)
 
 ### 2026-11-04 · 05:49 to 06:19
 Recorded outcome: ❌ No. Reviewed Ubuntu 26.04.1 compatibility with the Wazuh deployment, verified the Wazuh signing key, identified Ubuntu Server 24.04 LTS as the documented installation target, obtained the Ubuntu Server 24.04.5 ISO, prepared the existing virtual machine for OS replacement.
@@ -92,7 +139,7 @@ Recorded outcome: ✅ Yes. Initial project baselining activities have been compl
 [Open the original AutoDoc log](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md)
 
 ## Current limitations and next steps
-Ubuntu Server 24.04.5 ISO selected and attached for reinstallation. Final boot/install confirmation and OS compatibility validation remain outstanding. Wazuh repository and packages have not yet been installed.
+Wazuh infrastructure deployment is complete. The dashboard is accessible, but no endpoint agents are registered yet. Next session: integrate WIN11-CLIENT01, register the Wazuh agent, generate controlled Windows activity, verify centralized telemetry ingestion, and begin detection engineering.
 
 ## Project files
 - [Current project status](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/project-status.md)

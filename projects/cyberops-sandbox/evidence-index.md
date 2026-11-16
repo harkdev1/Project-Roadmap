@@ -68,6 +68,16 @@ Source: [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/m
 ![CyberOps Baseline v0.1](screenshots/2026-09-30_065419_cyberops-baseline-v0-1.png)
 The source log labels this capture “CyberOps Baseline v0.1.”
 Source: [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md). Image copied from the log reference and SHA-256 verified.
+
+### Wazuh Services Operational
+![Wazuh Services Operational](screenshots/2026-11-16_075712_wazuh-services-operational.png)
+The source log labels this capture “Wazuh Services Operational.”
+Source: [logs/2026-11-16.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-16.md). Image copied from the log reference and SHA-256 verified.
+
+### Wazuh Dashboard Accessible
+![Wazuh Dashboard Accessible](screenshots/2026-11-16_075920_wazuh-dashboard-accessible.png)
+The source log labels this capture “Wazuh Dashboard Accessible.”
+Source: [logs/2026-11-16.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-16.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->
 
 AutoDoc refreshes this section from image links in the source logs. Each image is copied into this Roadmap folder and checked against the source bytes before it is committed.
