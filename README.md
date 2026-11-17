@@ -21,9 +21,9 @@ This project established a foundational network infrastructure using OPNsense, d
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Ubuntu Server 24.04.5 LTS reinstallation, VMware boot configuration, Ubuntu package updates, LVM root filesystem expansion, OpenSSH installation and configuration, remote SSH validation, Wazuh indexer deployment, Wazuh manager deployment, Wazuh dashboard deployment, service health verification, dashboard accessibility validation. **Summary:** This documentation details the process of re-establishing a compatible...
+Configured Windows PowerShell Script Block Logging through the Windows registry, verified local generation of PowerShell Event ID 4104, confirmed the Wazuh agent was collecting the PowerShell Operational event channel, enabled Wazuh JSON event archiving, corrected the Wazuh manager configuration XML and validated it, restarted the Wazuh manager successfully, verified that controlled PowerShell test events reached...
 
-[![Ubuntu Storage Configuration](projects/cyberops-sandbox/screenshots/2026-11-03_061020_ubuntu-storage-configuration.png)](projects/cyberops-sandbox/README.md)
+[![Wazuh Services Operational](projects/cyberops-sandbox/screenshots/2026-11-16_075712_wazuh-services-operational.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->
