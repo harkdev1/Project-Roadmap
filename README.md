@@ -21,9 +21,9 @@ This project established a foundational network infrastructure using OPNsense, d
 
 **Main Homelab · In progress** · [Source repository](https://github.com/harkdev1/CyberOps-Sandbox)
 
-Configured Windows PowerShell Script Block Logging through the Windows registry, verified local generation of PowerShell Event ID 4104, confirmed the Wazuh agent was collecting the PowerShell Operational event channel, enabled Wazuh JSON event archiving, corrected the Wazuh manager configuration XML and validated it, restarted the Wazuh manager successfully, verified that controlled PowerShell test events reached...
+Inspected PowerShell Event ID 4104 records in Wazuh Threat Hunting, examined event JSON and script-block contents, identified security-policy discovery activity using secedit and PasswordHistorySize, enabled Filebeat Wazuh archive forwarding, validated the Filebeat configuration, restarted Filebeat successfully, generated controlled Get-LocalUser activity on WIN11-CLIENT01, verified the resulting Event ID 4104...
 
-[![Wazuh Services Operational](projects/cyberops-sandbox/screenshots/2026-11-16_075712_wazuh-services-operational.png)](projects/cyberops-sandbox/README.md)
+[![Wazuh Agent Installed/Started Successfully](projects/cyberops-sandbox/screenshots/2026-11-17_053017_wazuh-agent-installed-started-successfully.png)](projects/cyberops-sandbox/README.md)
 <!-- autodoc:project:cyberops-sandbox:end -->
 
 <!-- autodoc:project:windows-helpdesk-lab:start -->

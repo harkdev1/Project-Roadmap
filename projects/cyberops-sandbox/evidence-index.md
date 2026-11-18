@@ -19,6 +19,31 @@ The screenshots displayed here are copied from image references in the original 
 
 
 <!-- autodoc:evidence-gallery:start -->
+### Wazuh Agent Installed/Started Successfully
+![Wazuh Agent Installed/Started Successfully](screenshots/2026-11-17_053017_wazuh-agent-installed-started-successfully.png)
+The source log labels this capture “Wazuh Agent Installed/Started Successfully.”
+Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+
+### Wazuh Powershell Configuration
+![Wazuh Powershell Configuration](screenshots/2026-11-17_053306_wazuh-powershell-configuration.png)
+The source log labels this capture “Wazuh Powershell Configuration.”
+Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+
+### Wazuh Windows Endpoint Investigation
+![Wazuh Windows Endpoint Investigation](screenshots/2026-11-17_054707_wazuh-windows-endpoint-investigation.png)
+The source log labels this capture “Wazuh Windows Endpoint Investigation.”
+Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+
+### Raw Event Archiving Configuration
+![Raw Event Archiving Configuration](screenshots/2026-11-17_055325_raw-event-archiving-configuration.png)
+The source log labels this capture “Raw Event Archiving Configuration.”
+Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+
+### Wazuh Powershell Event Ingestion Confirmed
+![Wazuh Powershell Event Ingestion Confirmed](screenshots/2026-11-17_060947_wazuh-powershell-event-ingestion-confirmed.png)
+The source log labels this capture “Wazuh Powershell Event Ingestion Confirmed.”
+Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+
 ### Wazuh Services Operational
 ![Wazuh Services Operational](screenshots/2026-11-16_075712_wazuh-services-operational.png)
 The source log labels this capture “Wazuh Services Operational.”
@@ -79,30 +104,15 @@ Source: [logs/2026-10-07.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/m
 The source log labels this capture “CyberOps Baseline v0.1.”
 Source: [logs/2026-09-30.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-09-30.md). Image copied from the log reference and SHA-256 verified.
 
-### Wazuh Agent Installed/Started Successfully
-![Wazuh Agent Installed/Started Successfully](screenshots/2026-11-17_053017_wazuh-agent-installed-started-successfully.png)
-The source log labels this capture “Wazuh Agent Installed/Started Successfully.”
-Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+### Wazuh Filebeat Archive Forwarding Enabled
+![Wazuh Filebeat Archive Forwarding Enabled](screenshots/2026-11-18_142111_wazuh-filebeat-archive-forwarding-enabled.png)
+The source log labels this capture “Wazuh Filebeat Archive Forwarding Enabled.”
+Source: [logs/2026-11-18.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-18.md). Image copied from the log reference and SHA-256 verified.
 
-### Wazuh Powershell Configuration
-![Wazuh Powershell Configuration](screenshots/2026-11-17_053306_wazuh-powershell-configuration.png)
-The source log labels this capture “Wazuh Powershell Configuration.”
-Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
-
-### Wazuh Windows Endpoint Investigation
-![Wazuh Windows Endpoint Investigation](screenshots/2026-11-17_054707_wazuh-windows-endpoint-investigation.png)
-The source log labels this capture “Wazuh Windows Endpoint Investigation.”
-Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
-
-### Raw Event Archiving Configuration
-![Raw Event Archiving Configuration](screenshots/2026-11-17_055325_raw-event-archiving-configuration.png)
-The source log labels this capture “Raw Event Archiving Configuration.”
-Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
-
-### Wazuh Powershell Event Ingestion Confirmed
-![Wazuh Powershell Event Ingestion Confirmed](screenshots/2026-11-17_060947_wazuh-powershell-event-ingestion-confirmed.png)
-The source log labels this capture “Wazuh Powershell Event Ingestion Confirmed.”
-Source: [logs/2026-11-17.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-17.md). Image copied from the log reference and SHA-256 verified.
+### Wazuh Powershell Event Dashboard Visibility
+![Wazuh Powershell Event Dashboard Visibility](screenshots/2026-11-18_142508_wazuh-powershell-event-dashboard-visibility.png)
+The source log labels this capture “Wazuh Powershell Event Dashboard Visibility.”
+Source: [logs/2026-11-18.md](https://github.com/harkdev1/CyberOps-Sandbox/blob/main/logs/2026-11-18.md). Image copied from the log reference and SHA-256 verified.
 <!-- autodoc:evidence-gallery:end -->
 
 AutoDoc refreshes this section from image links in the source logs. Each image is copied into this Roadmap folder and checked against the source bytes before it is committed.
